@@ -18,13 +18,10 @@ function MainMenu() {
 
     let [menuHidden, SetmenuHidden] = useState(true);
 
-    let hiddenStyle, submenuHeading;
+    let hiddenStyle;
 
     if (menuHidden) {
         hiddenStyle = {
-            display: "none",
-        };
-        submenuHeading = {
             display: "none",
         }
     } else {
@@ -33,11 +30,6 @@ function MainMenu() {
             display: "inline-block",
             padding: "0px 5px",
         };
-        submenuHeading = {
-            margin: "10px 0",
-            display: "inline",
-            fontSize: "10px",
-        }
     }
 
     return (
@@ -65,20 +57,34 @@ function MainMenu() {
             >
                 <ul>
                     <li>
-                        <DashboardIcon />
-                        <Link style={hiddenStyle} className="Linkk  " to={`/`}>Dashboard</Link>
+                        <Link className="Linkk">
+                            <MenuIcon />
+                            <p style={hiddenStyle}>Menu</p>
+                        </Link>
                     </li>
                     <li>
-                        <GroupIcon />
-                        <Link style={hiddenStyle} className="Linkk  " to={`/students`}>Students</Link>
+                        <Link className="Linkk" to={`/`}>
+                            <DashboardIcon />
+                            <p style={hiddenStyle}>Dashboard</p>
+                        </Link>
                     </li>
                     <li>
-                        <SupervisedUserCircleIcon />
-                        <Link style={hiddenStyle} className="Linkk  " to={`/teachers`}>Teachers</Link>
+                        <Link className="Linkk" to={`/students`}>
+                            <GroupIcon />
+                            <p style={hiddenStyle}>Students</p>
+                        </Link>
                     </li>
                     <li>
-                        <SettingsIcon />
-                        <Link style={hiddenStyle} className="Linkk  " to={`/settings`}>Settings</Link>
+                        <Link className="Linkk" to={`/teachers`}>
+                            <SupervisedUserCircleIcon />
+                            <p style={hiddenStyle}>Teachers</p>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link className="Linkk" to={`/settings`}>
+                            <SettingsIcon />
+                            <p style={hiddenStyle}>Settings</p>
+                        </Link>
                     </li>
                 </ul>
             </div>

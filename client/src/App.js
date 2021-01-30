@@ -1,6 +1,7 @@
 import React from 'react';
-import StudentMain from './components/StudentMain'
-import Dashboard from './components/Dashboard'
+import './style.css';
+import StudentMain from './pages/StudentMain'
+import Dashboard from './pages/Dashboard'
 import {
   BrowserRouter as Router,
   Switch,
