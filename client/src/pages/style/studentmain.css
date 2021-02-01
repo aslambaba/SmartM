@@ -2,3 +2,12 @@
     margin-top: 70px;
     margin-left: 100px;
 }
+.AddNewBTN{
+    border: none;
+    border-radius: 3px;
+    color: white;
+    background-color: blue;
+    margin-top: 15px;
+    padding: 8px 15px;
+    font-size: 12px;
+}
