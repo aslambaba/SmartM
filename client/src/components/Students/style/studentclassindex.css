@@ -1,0 +1,19 @@
+
+.ClassesIndex{
+    padding: 30px 0px;
+}
+.ClassesIndex h2{
+    font-size: 24px;
+}
+.ClassesIndex h3{
+    background-color: yellow;
+    padding: 5px 10px;
+    font-size: 18px;
+    margin: 10px 0px;
+    border-radius: 3px;
+}
+.ClassesIndex h3:hover{
+    color: white;
+    background-color: blue;
+    transition-duration: 0.5s;
+}
