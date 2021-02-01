@@ -1,0 +1,60 @@
+.AddStudents{
+    margin-top: 90px;
+    margin-left: 100px;
+    margin-bottom: 70px;
+}
+.FormBody{
+    text-align: right;
+    padding: 0px 20px;
+}
+.FormBody img{
+    width: 200px;
+    height: 170px;
+}
+.PersonalInfo{
+    text-align: left;
+    margin: 20px 0px;
+}
+.PersonalInfo input{
+    margin: 10px 0px;
+    border:none;
+    padding: 10px 20px;
+    border-radius: 3px;
+}
+.PersonalInfo select{
+    width: 100%;
+    margin: 10px 0px;
+    border:none;
+    padding: 10px 20px;
+    border-radius: 3px;
+}
+.FamilyInformation {
+    text-align: left;
+}
+.FamilyInformation input{
+    margin: 10px 0px;
+    border:none;
+    padding: 10px 20px;
+    border-radius: 3px;
+}
+.AcademicInformation{
+    text-align: left;
+}
+.AcademicInformation input{
+    width: 100%;
+    margin: 10px 0px;
+    border:none;
+    padding: 10px 20px;
+    border-radius: 3px;
+}
+.SaveBTN{
+    margin: 20px 0px;
+}
+.SaveBTN button{
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    margin: 0px 10px;
+    background-color: brown;
+    color: white;
+}
