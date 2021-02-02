@@ -10,6 +10,7 @@ function StudentClassIndex(){
                     <div className='ClassesIndex'>
                         <h2>Classes</h2>
                         <Row>
+                            <Col lg={1} md={2} sm={3} xs={4}><h3>All</h3></Col>
                             <Col lg={1} md={2} sm={3} xs={4}><h3>1</h3></Col>
                             <Col lg={1} md={2} sm={3} xs={4}><h3>2</h3></Col>
                             <Col lg={1} md={2} sm={3} xs={4}><h3>3</h3></Col>
