@@ -1,0 +1,19 @@
+.SettingTab{
+
+}
+.SettingTab ul{
+    margin: 20px 0px;
+    padding: 0;
+}
+.SettingTab ul li{
+    background-color: #111111;
+    list-style-type: none;
+    display: inline-block;
+    margin: 10px 10px;
+    padding: 5px 15px;
+    border-radius: 3px;
+}
+.SettingTabLink p{
+    margin: 0;
+    color: white;
+}
