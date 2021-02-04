@@ -3,3 +3,46 @@
     margin-left: 100px;
     margin-bottom: 70px;
 }
+.AccountInformation p{
+    margin-top:20px;
+    font-size: 18px;
+    font-weight: 400;
+}
+.AccountInformation input{
+    width: 90%;
+    border-radius: 3px;
+    border: none;
+    padding: 10px 20px;
+    background-color: white;
+    border: 1px solid rgba(13, 143, 230, 0.788);
+}
+.AccountInfoBTN{
+    text-align: right;
+    padding: 20px 20px;
+}
+.AccountInfoBTN button{
+    font-size: 14px;
+    color: white;
+    border: none;
+    background-color: #111111;
+    margin: 10px 10px;
+    padding: 5px 15px;
+    border-radius: 3px;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+.GeneralFeatures h3{
+    margin: 20px 0px;
+}
+.GeneralFeatures p{
+      display: inline-block;
+      margin: 0;
+      margin-top: 5px;
+}
+.feature{
+    margin: 5px 0px;
+}
