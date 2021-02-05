@@ -7,6 +7,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import SettingsIcon from '@material-ui/icons/Settings';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import GroupIcon from '@material-ui/icons/Group';
+import PaymentIcon from '@material-ui/icons/Payment';
 import SupervisedUserCircleIcon from '@material-ui/icons/SupervisedUserCircle';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
@@ -78,6 +79,12 @@ function MainMenu() {
                         <Link className="Linkk" to={`/teachers`}>
                             <SupervisedUserCircleIcon />
                             <p style={hiddenStyle}>Teachers</p>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link className="Linkk" to={`/payments`}>
+                            <PaymentIcon />
+                            <p style={hiddenStyle}>Payments</p>
                         </Link>
                     </li>
                     <li>
