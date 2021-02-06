@@ -58,3 +58,25 @@
     background-color: brown;
     color: white;
 }
+.QualificationInformation {
+    text-align: left;
+}
+.QualificationInformation input{
+    margin: 10px 0px;
+    border:none;
+    padding: 10px 20px;
+    border-radius: 3px;
+}
+.WorkInformation{
+    text-align: left;
+}
+.WorkInformation input{
+    width: 100%;
+    margin: 10px 0px;
+    border:none;
+    padding: 10px 20px;
+    border-radius: 3px;
+}
+.QualificationInformation h3, .WorkInformation h3{
+    margin: 20px 0px;
+}

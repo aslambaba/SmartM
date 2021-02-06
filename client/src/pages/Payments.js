@@ -11,6 +11,7 @@ function FeesChallans() {
             <div className='FeesChallansMain'>
                 <h2>Payments</h2>
                 <PaymentsTab/>
+                <p>Note: There You Can track a record of Student Dues and Teachers Salaries</p>
             </div>
         </div>
     )

@@ -4,6 +4,7 @@ import Dashboard from './pages/Dashboard'
 import StudentMain from './pages/StudentMain'
 import AddStudent from './pages/AddStudent';
 import TeacherMain from './pages/TeacherMain';
+import AddTeacher from './pages/AddTeacher';
 import FeesChallans from './pages/Payments';
 import StudentFees from './components/Payments/StudentFees';
 import TeacherSalary from './components/Payments/TeachersSalary';
@@ -26,6 +27,7 @@ function App() {
           <Route exact path='/students' component={StudentMain}></Route>
           <Route path='/students/addstudent' component={AddStudent}></Route>
           <Route exact path='/teachers' component={TeacherMain}></Route>
+          <Route exact path='/teachers/addteacher' component={AddTeacher}></Route>
           <Route exact path='/settings' component={SettingMain}></Route>
           <Route exact path='/payments' component={FeesChallans}></Route>
           <Route exact path='/payments/students' component={StudentFees}></Route>

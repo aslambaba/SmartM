@@ -2,7 +2,8 @@ import React from 'react';
 import './style/addstudent.css';
 import StudentIcon from './images/studentIcon.jpg'
 import MainMenu from '../components/MainMenu'
-import { Container, Row, Col } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
+import PreviousInstitute from '../components/Students/PreviousInstitute';
 
 function AddStudent() {
     return (
@@ -50,10 +51,7 @@ function AddStudent() {
                         </div>
                         <div className="AcademicInformation">
                             <h3>Academic Information</h3>
-                            <Row>
-                                <Col lg={12} md={12} sm={12} xs={12}><input placeholder="1) Previous School" /></Col>
-                                <Col lg={12} md={12} sm={12} xs={12}><input placeholder="2) Previous School" /></Col>
-                            </Row>
+                            <PreviousInstitute/>
                         </div>
                         <div class="SaveBTN">
                             <button>Cancel</button>
