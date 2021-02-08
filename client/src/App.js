@@ -3,6 +3,7 @@ import './style.css';
 import Dashboard from './pages/Dashboard'
 import StudentMain from './pages/StudentMain'
 import AddStudent from './pages/AddStudent';
+import ViewStudent from './pages/ViewStudent';
 import TeacherMain from './pages/TeacherMain';
 import AddTeacher from './pages/AddTeacher';
 import FeesChallans from './pages/Payments';
@@ -26,6 +27,7 @@ function App() {
           <Route exact path='/' component={Dashboard}></Route>
           <Route exact path='/students' component={StudentMain}></Route>
           <Route path='/students/addstudent' component={AddStudent}></Route>
+          <Route path='/students/viewstudent' component={ViewStudent}></Route>
           <Route exact path='/teachers' component={TeacherMain}></Route>
           <Route exact path='/teachers/addteacher' component={AddTeacher}></Route>
           <Route exact path='/settings' component={SettingMain}></Route>

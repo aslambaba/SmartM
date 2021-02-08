@@ -1,9 +1,14 @@
 import React from 'react'
 import './style/studentrow.css'
 import { Container, Row, Col } from 'react-bootstrap';
+import {
+    Link,
+    useRouteMatch,
+} from "react-router-dom";
 
-function StudentRow(){
-    return(
+function StudentRow() {
+    let { url } = useRouteMatch();
+    return (
         <div>
             <Container>
                 <Row>
@@ -29,7 +34,9 @@ function StudentRow(){
                                 <Col lg={1} md={1} sm={1} xs={1}><p>Blue</p></Col>
                                 <Col lg={3} md={1} sm={1} xs={1}>
                                     <div className="ActionButton">
-                                        <button>view</button>
+                                        <Link to={`${url}/viewstudent`}>
+                                            <button>view</button>
+                                        </Link>
                                         <button>update</button>
                                         <button>delete</button>
                                     </div>
@@ -45,7 +52,9 @@ function StudentRow(){
                                 <Col lg={1} md={1} sm={1} xs={1}><p>Blue</p></Col>
                                 <Col lg={3} md={1} sm={1} xs={1}>
                                     <div className="ActionButton">
-                                        <button>view</button>
+                                        <Link to={`${url}/viewstudent`}>
+                                            <button>view</button>
+                                        </Link>
                                         <button>update</button>
                                         <button>delete</button>
                                     </div>
@@ -61,14 +70,16 @@ function StudentRow(){
                                 <Col lg={1} md={1} sm={1} xs={1}><p>Blue</p></Col>
                                 <Col lg={3} md={1} sm={1} xs={1}>
                                     <div className="ActionButton">
-                                        <button>view</button>
+                                        <Link to={`${url}/viewstudent`}>
+                                            <button>view</button>
+                                        </Link>
                                         <button>update</button>
                                         <button>delete</button>
                                     </div>
                                 </Col>
                             </Row>
                         </div>
-                    </Col> 
+                    </Col>
                 </Row>
             </Container>
         </div>

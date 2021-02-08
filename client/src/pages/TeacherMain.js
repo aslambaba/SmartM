@@ -5,7 +5,7 @@ import './style/studentmain.css'
 import MainMenu from '../components/MainMenu'
 import ClassIndex from '../components/ClassIndex';
 import TeacherRow from '../components/Teachers/TeacherRow';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 
 
 import {
