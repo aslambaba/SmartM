@@ -1,11 +1,13 @@
 import React from 'react';
 import './style.css';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import Dashboard from './pages/Dashboard'
 import StudentMain from './pages/StudentMain'
 import AddStudent from './pages/AddStudent';
 import ViewStudent from './pages/ViewStudent';
 import TeacherMain from './pages/TeacherMain';
 import AddTeacher from './pages/AddTeacher';
+import ViewTeacher from './pages/ViewTeacher';
 import FeesChallans from './pages/Payments';
 import StudentFees from './components/Payments/StudentFees';
 import TeacherSalary from './components/Payments/TeachersSalary';
@@ -30,6 +32,7 @@ function App() {
           <Route path='/students/viewstudent' component={ViewStudent}></Route>
           <Route exact path='/teachers' component={TeacherMain}></Route>
           <Route exact path='/teachers/addteacher' component={AddTeacher}></Route>
+          <Route exact path='/teachers/viewteacher' component={ViewTeacher}></Route>
           <Route exact path='/settings' component={SettingMain}></Route>
           <Route exact path='/payments' component={FeesChallans}></Route>
           <Route exact path='/payments/students' component={StudentFees}></Route>

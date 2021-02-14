@@ -1,9 +1,15 @@
 import React from 'react';
 import './style/teacherrow.css'
 import { Container, Row, Col } from 'react-bootstrap';
+import {
+    Link,
+    useRouteMatch,
+} from "react-router-dom";
 
-function TeacherRow(){
-    return(
+
+function TeacherRow() {
+    let { url } = useRouteMatch();
+    return (
         <div>
             <Container>
                 <Row>
@@ -25,7 +31,9 @@ function TeacherRow(){
                                 <Col lg={3} md={1} sm={1} xs={1}><p>35202-3596398-9</p></Col>
                                 <Col lg={3} md={1} sm={1} xs={1}>
                                     <div className="ActionButton">
-                                        <button>view</button>
+                                        <Link to={`${url}/viewteacher`}>
+                                            <button>view</button>
+                                        </Link>
                                         <button>update</button>
                                         <button>delete</button>
                                     </div>
@@ -39,7 +47,9 @@ function TeacherRow(){
                                 <Col lg={3} md={1} sm={1} xs={1}><p>35202-3596398-9</p></Col>
                                 <Col lg={3} md={1} sm={1} xs={1}>
                                     <div className="ActionButton">
-                                        <button>view</button>
+                                        <Link to={`${url}/viewteacher`}>
+                                            <button>view</button>
+                                        </Link>
                                         <button>update</button>
                                         <button>delete</button>
                                     </div>
@@ -53,7 +63,9 @@ function TeacherRow(){
                                 <Col lg={3} md={1} sm={1} xs={1}><p>35202-3596398-9</p></Col>
                                 <Col lg={3} md={1} sm={1} xs={1}>
                                     <div className="ActionButton">
-                                        <button>view</button>
+                                        <Link to={`${url}/viewteacher`}>
+                                            <button>view</button>
+                                        </Link>
                                         <button>update</button>
                                         <button>delete</button>
                                     </div>
@@ -67,14 +79,16 @@ function TeacherRow(){
                                 <Col lg={3} md={1} sm={1} xs={1}><p>35202-3596398-9</p></Col>
                                 <Col lg={3} md={1} sm={1} xs={1}>
                                     <div className="ActionButton">
-                                        <button>view</button>
+                                        <Link to={`${url}/viewteacher`}>
+                                            <button>view</button>
+                                        </Link>
                                         <button>update</button>
                                         <button>delete</button>
                                     </div>
                                 </Col>
                             </Row>
                         </div>
-                    </Col> 
+                    </Col>
                 </Row>
             </Container>
         </div>
