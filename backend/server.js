@@ -1,32 +1,12 @@
 const { ApolloServer, gql } = require('apollo-server');
+const mongoose = require('mongoose');
+const typeDefs = require('./schema/schema');
+const resolvers = require('./resolvers/resolver');
 
-const students = [
-  {
-    firstName: 'Aslam',
-    lastName: 'Sarfraz',
-  },
-  {
-    firstName: 'Usama',
-    lastName: 'Yasin',
-  },
-];
 
-const typeDefs = gql`
-  
-  type Student {
-    firstName: String
-    lastName: String
-  }
-  type Query {
-    students: [Student]
-  }
-`;
+mongoose.connect('mongodb://localhost:27017/SmartManagment', {useNewUrlParser: true, useUnifiedTopology: true});
+const con = mongoose.connection;
 
-const resolvers = {
-  Query: {
-    students: () => students,
-  },
-};
 
 // The ApolloServer constructor requires two parameters: your schema
 // definition and your set of resolvers.
