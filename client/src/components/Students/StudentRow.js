@@ -6,8 +6,18 @@ import {
     useRouteMatch,
 } from "react-router-dom";
 
+// Apollo Client For Query Students Record
+import { useQuery} from '@apollo/client';
+import {GetStudents} from '../../queries/studentquery';
+
 function StudentRow() {
+
+
     let { url } = useRouteMatch();
+    const { loading, error, data } = useQuery(GetStudents);
+    if (loading) return <p>Loading...</p>;
+    if (error) return <p>Error :(</p>;
+    let studentRecords = data.students;
     return (
         <div>
             <Container>
@@ -24,60 +34,31 @@ function StudentRow() {
                                 <Col lg={1} md={1} sm={1} xs={1}><p>Section</p></Col>
                                 <Col lg={3} md={1} sm={1} xs={1}><p>Action</p></Col>
                             </Row>
-                            <Row className="STDR">
-                                <Col lg={1} md={1} sm={1} xs={1}><p>#1029</p></Col>
-                                <Col lg={1} md={1} sm={1} xs={1}><p>Photo</p></Col>
-                                <Col lg={2} md={1} sm={1} xs={1}><p>Aslam Sarfraz</p></Col>
-                                <Col lg={1} md={1} sm={1} xs={1}><p>Male</p></Col>
-                                <Col lg={2} md={1} sm={1} xs={1}><p>Shama Zia</p></Col>
-                                <Col lg={1} md={1} sm={1} xs={1}><p>10th</p></Col>
-                                <Col lg={1} md={1} sm={1} xs={1}><p>Blue</p></Col>
-                                <Col lg={3} md={1} sm={1} xs={1}>
-                                    <div className="ActionButton">
-                                        <Link to={`${url}/viewstudent`}>
-                                            <button>view</button>
-                                        </Link>
-                                        <button>update</button>
-                                        <button>delete</button>
-                                    </div>
-                                </Col>
-                            </Row>
-                            <Row className="STDR">
-                                <Col lg={1} md={1} sm={1} xs={1}><p>#1029</p></Col>
-                                <Col lg={1} md={1} sm={1} xs={1}><p>Photo</p></Col>
-                                <Col lg={2} md={1} sm={1} xs={1}><p>Aslam Sarfraz</p></Col>
-                                <Col lg={1} md={1} sm={1} xs={1}><p>Male</p></Col>
-                                <Col lg={2} md={1} sm={1} xs={1}><p>Shama Zia</p></Col>
-                                <Col lg={1} md={1} sm={1} xs={1}><p>10th</p></Col>
-                                <Col lg={1} md={1} sm={1} xs={1}><p>Blue</p></Col>
-                                <Col lg={3} md={1} sm={1} xs={1}>
-                                    <div className="ActionButton">
-                                        <Link to={`${url}/viewstudent`}>
-                                            <button>view</button>
-                                        </Link>
-                                        <button>update</button>
-                                        <button>delete</button>
-                                    </div>
-                                </Col>
-                            </Row>
-                            <Row className="STDR">
-                                <Col lg={1} md={1} sm={1} xs={1}><p>#1029</p></Col>
-                                <Col lg={1} md={1} sm={1} xs={1}><p>Photo</p></Col>
-                                <Col lg={2} md={1} sm={1} xs={1}><p>Aslam Sarfraz</p></Col>
-                                <Col lg={1} md={1} sm={1} xs={1}><p>Male</p></Col>
-                                <Col lg={2} md={1} sm={1} xs={1}><p>Shama Zia</p></Col>
-                                <Col lg={1} md={1} sm={1} xs={1}><p>10th</p></Col>
-                                <Col lg={1} md={1} sm={1} xs={1}><p>Blue</p></Col>
-                                <Col lg={3} md={1} sm={1} xs={1}>
-                                    <div className="ActionButton">
-                                        <Link to={`${url}/viewstudent`}>
-                                            <button>view</button>
-                                        </Link>
-                                        <button>update</button>
-                                        <button>delete</button>
-                                    </div>
-                                </Col>
-                            </Row>
+                            {
+                                studentRecords.map((a) => {
+                                    return (
+                                        <Row className="STDR">
+                                            <Col lg={1} md={1} sm={1} xs={1}><p>#{a.rollNumber}</p></Col>
+                                            <Col lg={1} md={1} sm={1} xs={1}><p>Photo</p></Col>
+                                            <Col lg={2} md={1} sm={1} xs={1}><p>{`${a.firstName} ${a.lastName}`}</p></Col>
+                                            <Col lg={1} md={1} sm={1} xs={1}><p>{a.gender}</p></Col>
+                                            <Col lg={2} md={1} sm={1} xs={1}><p>{a.guardianName}</p></Col>
+                                            <Col lg={1} md={1} sm={1} xs={1}><p>10th</p></Col>
+                                            <Col lg={1} md={1} sm={1} xs={1}><p>Blue</p></Col>
+                                            <Col lg={3} md={1} sm={1} xs={1}>
+                                                <div className="ActionButton">
+                                                    <Link to={`${url}/viewstudent`}>
+                                                        <button>view</button>
+                                                    </Link>
+                                                    <button>update</button>
+                                                    <button>delete</button>
+                                                </div>
+                                            </Col>
+                                        </Row>
+                                    )
+                                })
+                            }
+
                         </div>
                     </Col>
                 </Row>
