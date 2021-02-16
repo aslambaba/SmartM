@@ -17,7 +17,7 @@ const StudentSchema = new Schema({
     fatherOccupation: String,
     motherOccupation: String,
     fatherCNIC: Number,
-    MotherCNIC: Number,
+    motherCNIC: Number,
     phoneNumber: Number,
     nationality: String,
     presentAddress: String,

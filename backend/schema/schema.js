@@ -39,7 +39,7 @@ const typeDefs = gql`
         fatherOccupation: String
         motherOccupation: String
         fatherCNIC: Int
-        MotherCNIC: Int
+        motherCNIC: Int
         phoneNumber: Int
         nationality: String
         presentAddress: String

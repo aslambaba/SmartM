@@ -26,7 +26,7 @@ const resolvers = {
                 fatherOccupation: stu.fatherOccupation,
                 motherOccupation: stu.motherOccupation,
                 fatherCNIC: stu.fatherCNIC,
-                MotherCNIC: stu.MotherCNIC,
+                motherCNIC: stu.MotherCNIC,
                 phoneNumber: stu.phoneNumber,
                 nationality: stu.nationality,
                 presentAddress: stu.presentAddress,
