@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 
 
 const StudentSchema = new Schema({
+    _id: String,
     firstName: String,
     lastName: String,
     gender: String,
@@ -11,7 +12,12 @@ const StudentSchema = new Schema({
     DOB: Number,
     rollNumber: Number,
     admissonNumber: Number,
+    admissonDate: Number,
     religion: String,
+    cast: String,
+    class: String,
+    section: String,
+    classShift: String,
     fatherName: String,
     motherName: String,
     fatherOccupation: String,

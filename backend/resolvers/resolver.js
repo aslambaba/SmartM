@@ -1,7 +1,7 @@
 const StudentModel = require('../models/studentModel');
 const resolvers = {
     Query: {
-        student: () => {
+        student:() => {
             return "Aslam Sarfraz"
         },
         students: () => {
@@ -20,7 +20,12 @@ const resolvers = {
                 DOB: stu.DOB,
                 rollNumber: stu.rollNumber,
                 admissonNumber: stu.admissonNumber,
+                admissonDate: stu.admissonDate,
                 religion: stu.religion,
+                cast: stu.cast,
+                class: stu.class,
+                section: stu.section,
+                classShift: stu.classShift,
                 fatherName: stu.fatherName,
                 motherName: stu.motherName,
                 fatherOccupation: stu.fatherOccupation,

@@ -18,6 +18,7 @@
 .PersonalInfo input{
     margin: 10px 0px;
     border:none;
+    border: 1px solid grey;
     padding: 10px 20px;
     border-radius: 3px;
 }
@@ -25,25 +26,37 @@
     width: 100%;
     margin: 10px 0px;
     border:none;
+    border: 1px solid grey;
     padding: 10px 20px;
     border-radius: 3px;
 }
 .FamilyInformation {
     text-align: left;
+    margin: 20px 0px;
 }
 .FamilyInformation input{
     margin: 10px 0px;
     border:none;
+    border: 1px solid grey;
     padding: 10px 20px;
     border-radius: 3px;
 }
 .AcademicInformation{
     text-align: left;
 }
+.AcademicInformation select{
+    width: 100%;
+    margin: 10px 0px;
+    border:none;
+    border: 1px solid grey;
+    padding: 10px 20px;
+    border-radius: 3px;
+}
 .AcademicInformation input{
     width: 100%;
     margin: 10px 0px;
     border:none;
+    border: 1px solid grey;
     padding: 10px 20px;
     border-radius: 3px;
 }

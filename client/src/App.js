@@ -29,7 +29,7 @@ function App() {
           <Route exact path='/' component={Dashboard}></Route>
           <Route exact path='/students' component={StudentMain}></Route>
           <Route path='/students/addstudent' component={AddStudent}></Route>
-          <Route path='/students/viewstudent' component={ViewStudent}></Route>
+          <Route path='/students/viewstudent/:id' component={ViewStudent}></Route>
           <Route exact path='/teachers' component={TeacherMain}></Route>
           <Route exact path='/teachers/addteacher' component={AddTeacher}></Route>
           <Route exact path='/teachers/viewteacher' component={ViewTeacher}></Route>

@@ -3,6 +3,7 @@ const { gql } = require('apollo-server');
 const typeDefs = gql`
 
     type Student {
+        _id: String
         firstName: String
         lastName: String
         gender: String
@@ -11,13 +12,18 @@ const typeDefs = gql`
         DOB: Int
         rollNumber: Int
         admissonNumber: Int
+        admissonDate: Int
         religion: String
+        cast: String
+        class: String
+        section: String
+        classShift: String
         fatherName: String
         motherName: String
         fatherOccupation: String
         motherOccupation: String
         fatherCNIC: Int
-        MotherCNIC: Int
+        motherCNIC: Int
         phoneNumber: Int
         nationality: String
         presentAddress: String
@@ -33,7 +39,12 @@ const typeDefs = gql`
         DOB: Int
         rollNumber: Int
         admissonNumber: Int
+        admissonDate: Int
         religion: String
+        cast: String
+        class: String
+        section: String
+        classShift: String
         fatherName: String
         motherName: String
         fatherOccupation: String

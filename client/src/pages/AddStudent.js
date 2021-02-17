@@ -9,7 +9,7 @@ import PreviousInstitute from '../components/Students/PreviousInstitute';
 // Import for intraction with Database
 import { useRef, useState } from 'react';
 import { useMutation } from '@apollo/client';
-import {AddNewStudent} from '../mutations/studentmutation';
+import { AddNewStudent } from '../mutations/studentmutation';
 
 function AddStudent() {
     const [savetype, setSavetype] = useState('')
@@ -24,7 +24,12 @@ function AddStudent() {
     let dobInput = useRef();
     let rollnumberInput = useRef();
     let admissonnumberInput = useRef();
+    let admissondateInput = useRef();
     let religionInput = useRef();
+    let castInput = useRef();
+    let classInput = useRef();
+    let sectionInput = useRef();
+    let classshiftInput = useRef();
     let fathernameInput = useRef();
     let mothernameInput = useRef();
     let fatheroccupInput = useRef();
@@ -50,7 +55,12 @@ function AddStudent() {
                     dob: parseInt(dobInput.current.value),
                     rollNumber: parseInt(rollnumberInput.current.value),
                     admissonNumber: parseInt(admissonnumberInput.current.value),
+                    admissonDate: parseInt(admissondateInput.current.value),
                     religion: religionInput.current.value,
+                    cast: castInput.current.value,
+                    class: classInput.current.value,
+                    section: sectionInput.current.value,
+                    classShift: classshiftInput.current.value,
                     fatherName: fathernameInput.current.value,
                     motherName: mothernameInput.current.value,
                     fatherOccupation: fatheroccupInput.current.value,
@@ -66,13 +76,18 @@ function AddStudent() {
         );
         firstnameInput.current.value = '';
         lastnameInput.current.value = '';
-        genderInput.current.value = '';
+        genderInput.current.value = 'Male';
         guardianInput.current.value = '';
         cnicInput.current.value = '';
         dobInput.current.value = '';
         rollnumberInput.current.value = '';
         admissonnumberInput.current.value = '';
+        admissondateInput.current.value = '';
         religionInput.current.value = '';
+        castInput.current.value = '';
+        classInput.current.value = 'Class';
+        sectionInput.current.value = 'Section';
+        classshiftInput.current.value = 'Class Shift';
         fathernameInput.current.value = '';
         mothernameInput.current.value = '';
         fatheroccupInput.current.value = '';
@@ -114,9 +129,36 @@ function AddStudent() {
                                 <Col lg={3} md={4} sm={6} xs={12}><input ref={dobInput} placeholder="Date Of Birth" /></Col>
                                 <Col lg={3} md={4} sm={6} xs={12}><input ref={rollnumberInput} placeholder="Roll No" /></Col>
                                 <Col lg={3} md={4} sm={6} xs={12}><input ref={admissonnumberInput} placeholder="Admission No" /></Col>
+                                <Col lg={3} md={4} sm={6} xs={12}><input ref={admissondateInput} placeholder="Admisson Date" /></Col>
                                 <Col lg={3} md={4} sm={6} xs={12}><input ref={religionInput} placeholder="Religion" /></Col>
+                                <Col lg={3} md={4} sm={6} xs={12}><input ref={castInput} placeholder="Cast" /></Col>
                                 <Col lg={3} md={4} sm={6} xs={12}><input placeholder="Photo" type='file' /></Col>
                             </Row>
+                        </div>
+                        <div className="AcademicInformation">
+                            <h3>Academic Information</h3>
+                            <Row>
+                                <Col lg={4} md={4} sm={6} xs={12}><select ref={classInput}>
+                                    <option>Class</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select></Col>
+                                <Col lg={4} md={4} sm={6} xs={12}><select ref={sectionInput}>
+                                    <option>Section</option>
+                                    <option>Red</option>
+                                    <option>Green</option>
+                                    <option>Blue</option>
+                                </select></Col>
+                                <Col lg={4} md={4} sm={6} xs={12}><select ref={classshiftInput}>
+                                    <option>Class Shift</option>
+                                    <option>Morning</option>
+                                    <option>Evening</option>
+                                </select></Col>
+                            </Row>
+                            <PreviousInstitute />
                         </div>
                         <div className="FamilyInformation">
                             <h3>Parents Information</h3>
@@ -133,10 +175,6 @@ function AddStudent() {
                                 <Col lg={3} md={4} sm={6} xs={12}><input ref={parmanentaddressInput} placeholder="Parmanent Address" /></Col>
                                 <Col lg={3} md={4} sm={6} xs={12}><input placeholder="Photo" type='file' /></Col>
                             </Row>
-                        </div>
-                        <div className="AcademicInformation">
-                            <h3>Academic Information</h3>
-                            <PreviousInstitute />
                         </div>
                         <div class="SaveBTN">
                             <button>Cancel</button>

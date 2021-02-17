@@ -4,11 +4,14 @@ import { gql } from '@apollo/client';
 export const GetStudents = gql`
 query{
     students{
+        _id
         rollNumber
         firstName
         lastName
         gender
         guardianName
+        class
+        section
     }
 }
 `;

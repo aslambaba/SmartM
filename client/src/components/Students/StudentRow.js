@@ -14,7 +14,7 @@ function StudentRow() {
 
 
     let { url } = useRouteMatch();
-    const { loading, error, data } = useQuery(GetStudents);
+    let { loading, error, data } = useQuery(GetStudents);
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error :(</p>;
     let studentRecords = data.students;
@@ -43,11 +43,11 @@ function StudentRow() {
                                             <Col lg={2} md={1} sm={1} xs={1}><p>{`${a.firstName} ${a.lastName}`}</p></Col>
                                             <Col lg={1} md={1} sm={1} xs={1}><p>{a.gender}</p></Col>
                                             <Col lg={2} md={1} sm={1} xs={1}><p>{a.guardianName}</p></Col>
-                                            <Col lg={1} md={1} sm={1} xs={1}><p>10th</p></Col>
-                                            <Col lg={1} md={1} sm={1} xs={1}><p>Blue</p></Col>
+                                            <Col lg={1} md={1} sm={1} xs={1}><p>{a.class}</p></Col>
+                                            <Col lg={1} md={1} sm={1} xs={1}><p>{a.section}</p></Col>
                                             <Col lg={3} md={1} sm={1} xs={1}>
                                                 <div className="ActionButton">
-                                                    <Link to={`${url}/viewstudent`}>
+                                                    <Link to={`${url}/viewstudent/${a._id}`}>
                                                         <button>view</button>
                                                     </Link>
                                                     <button>update</button>

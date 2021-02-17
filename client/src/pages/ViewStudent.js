@@ -3,9 +3,13 @@ import MainMenu from '../components/MainMenu'
 import { Row, Col } from 'react-bootstrap';
 import './style/viewstudent.css';
 import StudentIcon from './images/studentIcon.jpg';
+import {useParams} from "react-router-dom";
 
 
 function ViewStudent() {
+
+    const { id } = useParams();
+    console.log(id);
     return (
         <div>
             <MainMenu />
