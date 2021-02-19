@@ -82,6 +82,18 @@ function MainMenu() {
                         </Link>
                     </li>
                     <li>
+                        <Link className="Linkk" to={`/classes`}>
+                            <SupervisedUserCircleIcon />
+                            <p style={hiddenStyle}>Classes</p>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link className="Linkk" to={`/timetable`}>
+                            <SupervisedUserCircleIcon />
+                            <p style={hiddenStyle}>Time Table</p>
+                        </Link>
+                    </li>
+                    <li>
                         <Link className="Linkk" to={`/payments`}>
                             <PaymentIcon />
                             <p style={hiddenStyle}>Payments</p>
