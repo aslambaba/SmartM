@@ -1,7 +1,8 @@
 import React from 'react'
 import MainMenu from '../../components/MainMenu';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import AddClass from '../../components/Classes/Addclass';
+import ClassComponent from '../../components/Classes/ClassComponent';
 
 import './style/classesstyle.css';
 
@@ -21,6 +22,11 @@ function SingleClass(){
                     <Col lg={2} md={2} sm={4} xs={4}>
                         <AddClass/>
                     </Col>
+                </Row>
+                <Row>
+                    <Col lg={4} md={4} sm={6} xs={6}><ClassComponent/></Col>
+                    <Col lg={4} md={4} sm={6} xs={6}><ClassComponent/></Col>
+                    <Col lg={4} md={4} sm={6} xs={6}><ClassComponent/></Col>
                 </Row>
             </div>
         </div>
