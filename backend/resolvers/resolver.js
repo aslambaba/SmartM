@@ -8,6 +8,10 @@ const resolvers = {
             const data = StudentModel.find();
             return data
         },
+        getStudents: (_,{admissonNo})=>{
+            const getstudentdata = StudentModel.findOne({admissonNumber: admissonNo});
+            return getstudentdata;
+        }
     },
     Mutation: {
         AddStudent: (_, { stu }) => {

@@ -3,18 +3,30 @@ import MainMenu from '../components/MainMenu'
 import { Row, Col } from 'react-bootstrap';
 import './style/viewstudent.css';
 import StudentIcon from './images/studentIcon.jpg';
-import {useParams} from "react-router-dom";
+import { useParams } from "react-router-dom";
 
+
+import { useQuery } from '@apollo/client';
+import { getsingleStudent } from '../queries/studentquery';
 
 function ViewStudent() {
 
     const { id } = useParams();
-    console.log(id);
+
+    let admissonNoo = parseInt(id);
+    let { loading, error, data } = useQuery(getsingleStudent, {
+        variables: { admissonNoo }
+    });
+    if (loading) return <p>Loading...</p>;
+    if (error) return <p>Error :(</p>;
+    console.log(data);
+    let stu = data.getStudents;
     return (
+
         <div>
             <MainMenu />
             <div className='ViewStudentMain'>
-                <h2>Aslam Sarfraz</h2>
+                <h2>{`${stu.firstName} ${stu.lastName}`}</h2>
                 <Row>
                     <Col lg={8} md={8} sm={12} xs={12}>
                         <div className='StudentData'>
@@ -23,25 +35,31 @@ function ViewStudent() {
                                     <h5>Roll No</h5>
                                 </Col>
                                 <Col lg={6} md={6} sm={12} xs={12}>
-                                    <p>#1897</p>
+                                    <p>{stu.rollNumber}</p>
                                 </Col>
                                 <Col lg={6} md={6} sm={12} xs={12}>
                                     <h5>Name</h5>
                                 </Col>
                                 <Col lg={6} md={6} sm={12} xs={12}>
-                                    <p>Aslam Sarfraz</p>
+                                    <p>{`${stu.firstName} ${stu.lastName}`}</p>
                                 </Col>
                                 <Col lg={6} md={6} sm={12} xs={12}>
                                     <h5>Guardian Name</h5>
                                 </Col>
                                 <Col lg={6} md={6} sm={12} xs={12}>
-                                    <p>Allama Iqbal</p>
+                                    <p>{stu.guardianName}</p>
                                 </Col>
                                 <Col lg={6} md={6} sm={12} xs={12}>
                                     <h5>Student CNIC/B-Form</h5>
                                 </Col>
                                 <Col lg={6} md={6} sm={12} xs={12}>
-                                    <p>35202-3876948-9</p>
+                                    <p>{stu.CNIC}</p>
+                                </Col>
+                                <Col lg={6} md={6} sm={12} xs={12}>
+                                    <h5>Date of Birth</h5>
+                                </Col>
+                                <Col lg={6} md={6} sm={12} xs={12}>
+                                    <p>{stu.DOB}</p>
                                 </Col>
                                 <Col lg={6} md={6} sm={12} xs={12}>
                                     <h5>Age</h5>
@@ -53,13 +71,19 @@ function ViewStudent() {
                                     <h5>Gender</h5>
                                 </Col>
                                 <Col lg={6} md={6} sm={12} xs={12}>
-                                    <p>Male</p>
+                                    <p>{stu.gender}</p>
                                 </Col>
                                 <Col lg={6} md={6} sm={12} xs={12}>
                                     <h5>Religion</h5>
                                 </Col>
                                 <Col lg={6} md={6} sm={12} xs={12}>
-                                    <p>Islam</p>
+                                    <p>{stu.religion}</p>
+                                </Col>
+                                <Col lg={6} md={6} sm={12} xs={12}>
+                                    <h5>Cast</h5>
+                                </Col>
+                                <Col lg={6} md={6} sm={12} xs={12}>
+                                    <p>{stu.cast}</p>
                                 </Col>
                             </Row>
                         </div>
@@ -79,25 +103,37 @@ function ViewStudent() {
                                     <h5>Roll No</h5>
                                 </Col>
                                 <Col lg={6} md={6} sm={12} xs={12}>
-                                    <p>#1897</p>
+                                    <p>{stu.rollNumber}</p>
                                 </Col>
                                 <Col lg={6} md={6} sm={12} xs={12}>
                                     <h5>Admission No</h5>
                                 </Col>
                                 <Col lg={6} md={6} sm={12} xs={12}>
-                                    <p>#126332</p>
+                                    <p>{stu.admissonNumber}</p>
                                 </Col>
                                 <Col lg={6} md={6} sm={12} xs={12}>
                                     <h5>Class</h5>
                                 </Col>
                                 <Col lg={6} md={6} sm={12} xs={12}>
-                                    <p>10th</p>
+                                    <p>{stu.class}</p>
                                 </Col>
                                 <Col lg={6} md={6} sm={12} xs={12}>
                                     <h5>Section</h5>
                                 </Col>
                                 <Col lg={6} md={6} sm={12} xs={12}>
-                                    <p>Blue</p>
+                                    <p>{stu.section}</p>
+                                </Col>
+                                <Col lg={6} md={6} sm={12} xs={12}>
+                                    <h5>Class Shift</h5>
+                                </Col>
+                                <Col lg={6} md={6} sm={12} xs={12}>
+                                    <p>{stu.classShift}</p>
+                                </Col>
+                                <Col lg={6} md={6} sm={12} xs={12}>
+                                    <h5>Admisson Date</h5>
+                                </Col>
+                                <Col lg={6} md={6} sm={12} xs={12}>
+                                    <p>{stu.admissonDate}</p>
                                 </Col>
                             </Row>
                         </div>
@@ -124,49 +160,49 @@ function ViewStudent() {
                                     <h5>Father Name</h5>
                                 </Col>
                                 <Col lg={6} md={6} sm={12} xs={12}>
-                                    <p>Nusrat Iqbal Saddiqui</p>
+                                    <p>{stu.fatherName}</p>
                                 </Col>
                                 <Col lg={6} md={6} sm={12} xs={12}>
                                     <h5>Father CNIC</h5>
                                 </Col>
                                 <Col lg={6} md={6} sm={12} xs={12}>
-                                    <p>98568-7849526-9</p>
+                                    <p>{stu.fatherCNIC}</p>
                                 </Col>
                                 <Col lg={6} md={6} sm={12} xs={12}>
                                     <h5>Father Occupation</h5>
                                 </Col>
                                 <Col lg={6} md={6} sm={12} xs={12}>
-                                    <p>Bank Manager</p>
+                                    <p>{stu.fatherOccupation}</p>
                                 </Col>
                                 <Col lg={6} md={6} sm={12} xs={12}>
                                     <h5>Mother Name</h5>
                                 </Col>
                                 <Col lg={6} md={6} sm={12} xs={12}>
-                                    <p>Shamila Zia</p>
+                                    <p>{stu.motherName}</p>
                                 </Col>
                                 <Col lg={6} md={6} sm={12} xs={12}>
                                     <h5>Mother CNIC</h5>
                                 </Col>
                                 <Col lg={6} md={6} sm={12} xs={12}>
-                                    <p>35202-3596398-9</p>
+                                    <p>{stu.motherCNIC}</p>
                                 </Col>
                                 <Col lg={6} md={6} sm={12} xs={12}>
                                     <h5>Mother Occupation</h5>
                                 </Col>
                                 <Col lg={6} md={6} sm={12} xs={12}>
-                                    <p>House Wife</p>
+                                    <p>{stu.motherOccupation}</p>
                                 </Col>
                                 <Col lg={6} md={6} sm={12} xs={12}>
                                     <h5>Phone Number</h5>
                                 </Col>
                                 <Col lg={6} md={6} sm={12} xs={12}>
-                                    <p>03134694182</p>
+                                    <p>{stu.phoneNumber}</p>
                                 </Col>
                                 <Col lg={6} md={6} sm={12} xs={12}>
                                     <h5>Nationality</h5>
                                 </Col>
                                 <Col lg={6} md={6} sm={12} xs={12}>
-                                    <p>Pakistan</p>
+                                    <p>{stu.nationality}</p>
                                 </Col>
                             </Row>
                         </div>
@@ -186,8 +222,8 @@ function ViewStudent() {
                     <Col lg={12} md={12} sm={12} xs={12}>
                         <h2>Address</h2>
                         <div className='addressSec'>
-                            <h3>Present Address: Lahore Gulburg Pahse II</h3>
-                            <h3>Permanent Address: Karachi Shahdra Pahse II</h3>
+                            <h3>Present Address: {stu.presentAddress}</h3>
+                            <h3>Permanent Address: {stu.parmanentAddress}</h3>
                         </div>
                     </Col>
                 </Row>

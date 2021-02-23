@@ -12,6 +12,41 @@ query{
         guardianName
         class
         section
+        admissonNumber
     }
 }
+`;
+
+export const getsingleStudent = gql`
+
+    query getSingleStudent($admissonNoo: Int!){
+    getStudents(admissonNo: $admissonNoo){
+        _id
+        firstName
+        lastName
+        gender
+        guardianName
+        CNIC
+        DOB
+        rollNumber
+        admissonNumber
+        admissonDate
+        religion
+        cast
+        class
+        section
+        classShift
+        fatherName
+        motherName
+        fatherOccupation
+        motherOccupation
+        fatherCNIC
+        motherCNIC
+        phoneNumber
+        nationality
+        presentAddress
+        parmanentAddress
+    }
+  }
+
 `;
