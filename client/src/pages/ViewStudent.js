@@ -12,10 +12,8 @@ import { getsingleStudent } from '../queries/studentquery';
 function ViewStudent() {
 
     const { id } = useParams();
-
-    let admissonNoo = parseInt(id);
     let { loading, error, data } = useQuery(getsingleStudent, {
-        variables: { admissonNoo }
+        variables: { id }
     });
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error :(</p>;

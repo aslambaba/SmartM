@@ -8,8 +8,9 @@ const resolvers = {
             const data = StudentModel.find();
             return data
         },
-        getStudents: (_,{admissonNo})=>{
-            const getstudentdata = StudentModel.findOne({admissonNumber: admissonNo});
+        getStudents: (_,{stuid})=>{
+            const getstudentdata = StudentModel.findById(stuid);
+            console.log(getstudentdata)
             return getstudentdata;
         }
     },
@@ -41,7 +42,10 @@ const resolvers = {
                 presentAddress: stu.presentAddress,
                 parmanentAddress: stu.parmanentAddress,
             });
-            student.save();
+            student.save().then((e,r)=>{
+                if(e){console.log(e)}
+                else{console.log(r)}
+            });
             return student
         }
     }

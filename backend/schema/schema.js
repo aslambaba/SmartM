@@ -60,7 +60,7 @@ const typeDefs = gql`
     type Query {
         student: String
         students: [Student]
-        getStudents(admissonNo: Int): Student
+        getStudents(stuid: String): Student
     }
 
     type Mutation{

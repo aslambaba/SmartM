@@ -47,7 +47,7 @@ function StudentRow() {
                                             <Col lg={1} md={1} sm={1} xs={1}><p>{a.section}</p></Col>
                                             <Col lg={3} md={1} sm={1} xs={1}>
                                                 <div className="ActionButton">
-                                                    <Link to={`${url}/viewstudent/${a.admissonNumber}`}>
+                                                    <Link to={`${url}/viewstudent/${a._id}`}>
                                                         <button>view</button>
                                                     </Link>
                                                     <button>update</button>

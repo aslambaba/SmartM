@@ -19,8 +19,8 @@ query{
 
 export const getsingleStudent = gql`
 
-    query getSingleStudent($admissonNoo: Int!){
-    getStudents(admissonNo: $admissonNoo){
+    query getSingleStudent($id: String!){
+    getStudents(stuid: $id){
         _id
         firstName
         lastName
