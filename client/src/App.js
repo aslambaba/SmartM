@@ -14,6 +14,7 @@ import TeacherSalary from './components/Payments/TeachersSalary';
 
 import Classes from './pages/classes/Classes';
 import SingleClass from './pages/classes/SingleClass';
+import VSinClass from './pages/classes/VSinClass';
 
 import SettingMain from './pages/SettingMain';
 import GeneralSetting from './components/Settings/GeneralSettings';
@@ -43,7 +44,8 @@ function App() {
           <Route exact path='/teachers/viewteacher' component={ViewTeacher}></Route>
 
           <Route exact path='/classes' component={Classes}></Route>
-          <Route path='/classes2' component={SingleClass}></Route>
+          <Route exact path='/classes/:classNo' component={SingleClass}></Route>
+          <Route path='/classes/:class/:ClassSection' component={VSinClass}></Route>
 
 
           <Route exact path='/settings' component={SettingMain}></Route>

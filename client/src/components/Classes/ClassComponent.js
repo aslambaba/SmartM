@@ -1,10 +1,10 @@
 import React from 'react'
 import './style/classcomponent.css';
 
-function ClassComponent(){
+function ClassComponent(props){
     return(
         <div className='MainSection'>
-            <h3>Class 1</h3>
+            <h3>Class {props.name}</h3>
         </div>
     )
 }
