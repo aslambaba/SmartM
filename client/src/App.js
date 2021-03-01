@@ -16,6 +16,8 @@ import Classes from './pages/classes/Classes';
 import SingleClass from './pages/classes/SingleClass';
 import VSinClass from './pages/classes/VSinClass';
 
+import AttendenceMain from './pages/attendance/AttendenceMain';
+
 import SettingMain from './pages/SettingMain';
 import GeneralSetting from './components/Settings/GeneralSettings';
 import UsersSettings from './components/Settings/UsersSettings';
@@ -46,6 +48,8 @@ function App() {
           <Route exact path='/classes' component={Classes}></Route>
           <Route exact path='/classes/:classNo' component={SingleClass}></Route>
           <Route path='/classes/:class/:ClassSection' component={VSinClass}></Route>
+
+          <Route exact path='/attendence' component={AttendenceMain}></Route>
 
 
           <Route exact path='/settings' component={SettingMain}></Route>
