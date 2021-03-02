@@ -1,6 +1,8 @@
 import React from 'react';
 import './style.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+import Login from './pages/login/Login';
 import Dashboard from './pages/Dashboard'
 import StudentMain from './pages/StudentMain'
 import AddStudent from './pages/AddStudent';
@@ -34,7 +36,8 @@ function App() {
       < Router>
         <Switch>
 
-          
+          <Route exact path='/login' component={Login}></Route>
+
           <Route exact path='/' component={Dashboard}></Route>
           <Route exact path='/students' component={StudentMain}></Route>
           <Route path='/students/addstudent' component={AddStudent}></Route>
@@ -60,7 +63,7 @@ function App() {
           <Route exact path='/payments' component={FeesChallans}></Route>
           <Route exact path='/payments/students' component={StudentFees}></Route>
           <Route exact path='/payments/teachers' component={TeacherSalary}></Route>
-          
+
         </Switch>
       </Router>
     </div>

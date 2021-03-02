@@ -1,0 +1,19 @@
+.mainheading{
+    margin: 20px 0px;
+    font-size: 25px
+}
+.LoginContainer{
+    padding: 0px 30px;
+    height: 100vh;
+    background-color: #80808026;
+}
+.paper{
+    margin-top: 10em;
+    align-items: 'left';
+}
+.form{
+    width: '100%';
+}
+.InstituteIcon{
+    height: 100vh;
+}
