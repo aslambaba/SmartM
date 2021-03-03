@@ -7,17 +7,31 @@ import {
 } from "react-router-dom";
 
 // Apollo Client For Query Students Record
-import { useQuery} from '@apollo/client';
-import {GetStudents} from '../../queries/studentquery';
-
+import { useQuery } from '@apollo/client';
+import { useMutation } from '@apollo/client';
+import { GetStudents } from '../../queries/studentquery';
+import {DeleteStudentRecord} from '../../mutations/studentmutation';
 function StudentRow() {
-
 
     let { url } = useRouteMatch();
     let { loading, error, data } = useQuery(GetStudents);
+    const [DeleteSTU] = useMutation(DeleteStudentRecord);
+
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error :(</p>;
     let studentRecords = data.students;
+
+    function DeleteStuRecord(id) {
+        DeleteSTU(
+            {
+                variables: {
+                    stuID: id,
+                },
+                refetchQueries: [{query: GetStudents}],
+            }
+        );                
+    }
+
     return (
         <div>
             <Container>
@@ -51,7 +65,7 @@ function StudentRow() {
                                                         <button>view</button>
                                                     </Link>
                                                     <button>update</button>
-                                                    <button>delete</button>
+                                                    <button onClick={()=>{DeleteStuRecord(a._id)}}>delete</button>
                                                 </div>
                                             </Col>
                                         </Row>

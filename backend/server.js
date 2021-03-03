@@ -4,7 +4,7 @@ const typeDefs = require('./schema/schema');
 const resolvers = require('./resolvers/resolver');
 
 
-mongoose.connect('mongodb://localhost:27017/SmartManagment', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb://localhost:27017/SmartManagment', {useNewUrlParser: true, useUnifiedTopology: true},()=>{console.log("MongoDB Connected")});
 const con = mongoose.connection;
 
 

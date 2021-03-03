@@ -47,7 +47,15 @@ const resolvers = {
                 else{console.log(r)}
             });
             return student
+        },
+        DeleteStudent: (_,{StudentID})=>{
+            console.log(StudentID)
+            StudentModel.findOneAndDelete({_id: StudentID},(e,r)=>{
+                if(e){return 'Record Deletion Failed !'}
+                else{return 'Record Deleted !'}
+            })
         }
+
     }
 };
 

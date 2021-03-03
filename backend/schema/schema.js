@@ -8,7 +8,7 @@ const typeDefs = gql`
         lastName: String
         gender: String
         guardianName: String
-        CNIC: Int
+        CNIC: String
         DOB: Int
         rollNumber: Int
         admissonNumber: Int
@@ -22,9 +22,9 @@ const typeDefs = gql`
         motherName: String
         fatherOccupation: String
         motherOccupation: String
-        fatherCNIC: Int
-        motherCNIC: Int
-        phoneNumber: Int
+        fatherCNIC: String
+        motherCNIC: String
+        phoneNumber: String
         nationality: String
         presentAddress: String
         parmanentAddress: String
@@ -35,7 +35,7 @@ const typeDefs = gql`
         lastName: String
         gender: String
         guardianName: String
-        CNIC: Int
+        CNIC: String
         DOB: Int
         rollNumber: Int
         admissonNumber: Int
@@ -49,9 +49,9 @@ const typeDefs = gql`
         motherName: String
         fatherOccupation: String
         motherOccupation: String
-        fatherCNIC: Int
-        motherCNIC: Int
-        phoneNumber: Int
+        fatherCNIC: String
+        motherCNIC: String
+        phoneNumber: String
         nationality: String
         presentAddress: String
         parmanentAddress: String
@@ -65,6 +65,7 @@ const typeDefs = gql`
 
     type Mutation{
         AddStudent(stu: StudentInput): Student
+        DeleteStudent(StudentID: String): String
     }
 
 `;

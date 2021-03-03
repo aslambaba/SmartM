@@ -7,7 +7,7 @@ export const AddNewStudent = gql`
     $lastName: String!,
     $gender: String!,
     $guardianName: String!,
-    $cnic: Int!,
+    $cnic: String!,
     $dob: Int!,
     $rollNumber: Int!,
     $admissonNumber: Int!,
@@ -21,9 +21,9 @@ export const AddNewStudent = gql`
     $motherName: String!,
     $fatherOccupation: String!,
     $motherOccupation: String!,
-    $fatherCNIC: Int!,
-    $MotherCNIC: Int!,
-    $phoneNumber: Int!,
+    $fatherCNIC: String!,
+    $motherCNIC: String!,
+    $phoneNumber: String!,
     $nationality: String!,
     $presentAddress: String!,
     $parmanentAddress: String!,
@@ -48,7 +48,7 @@ export const AddNewStudent = gql`
         fatherOccupation: $fatherOccupation,
         motherOccupation: $motherOccupation,
         fatherCNIC: $fatherCNIC,
-        motherCNIC: $MotherCNIC,
+        motherCNIC: $motherCNIC,
         phoneNumber: $phoneNumber,
         nationality: $nationality,
         presentAddress: $presentAddress,
@@ -57,5 +57,12 @@ export const AddNewStudent = gql`
         {
       firstName
     }
+  }
+`;
+
+
+export const DeleteStudentRecord = gql`
+  mutation DeleteStudent($stuID: String!){
+    DeleteStudent(StudentID: $stuID)
   }
 `;
