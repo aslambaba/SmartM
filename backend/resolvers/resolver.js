@@ -1,17 +1,20 @@
 const StudentModel = require('../models/studentModel');
+const TeacherModel = require('../models/teacherModel');
+
 const resolvers = {
     Query: {
-        student:() => {
-            return "Aslam Sarfraz"
-        },
         students: () => {
             const data = StudentModel.find();
             return data
         },
         getStudents: (_,{stuid})=>{
             const getstudentdata = StudentModel.findById(stuid);
-            console.log(getstudentdata)
             return getstudentdata;
+        },
+
+        teachers: ()=>{
+            const teachers = TeacherModel.find();
+            return teachers
         }
     },
     Mutation: {
@@ -54,8 +57,29 @@ const resolvers = {
                 if(e){return 'Record Deletion Failed !'}
                 else{return 'Record Deleted !'}
             })
-        }
+        },
 
+
+        AddTeacher: (_,{tch})=>{
+            const teacherRecord = new TeacherModel({
+                firstName: tch.firstName,
+                lastName: tch.lastName,
+                gender: tch.gender,
+                fatherName: tch.fatherName,
+                CNIC: tch.CNIC,
+                DOB: tch.DOB,
+                teacherID: tch.teacherID,
+                religion: tch.religion,
+                email: tch.email,
+                phoneNumber: tch.phoneNumber,
+                address: tch.address,
+            });
+            teacherRecord.save().then((e,r)=>{
+                if(e){console.log(e)}
+                else{console.log(r)}
+            });
+            return teacherRecord
+        }
     }
 };
 

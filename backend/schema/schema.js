@@ -57,15 +57,47 @@ const typeDefs = gql`
         parmanentAddress: String
     }
 
+    type Teacher {
+        _id: String
+        firstName: String
+        lastName: String
+        gender: String
+        fatherName: String
+        CNIC: String
+        DOB: Int
+        teacherID: Int
+        religion: String
+        email: String
+        phoneNumber: String
+        address: String
+    }
+
+    input TeacherInput {
+        firstName: String
+        lastName: String
+        gender: String
+        fatherName: String
+        CNIC: String
+        DOB: Int
+        teacherID: Int
+        religion: String
+        email: String
+        phoneNumber: String
+        address: String
+    }
+
     type Query {
-        student: String
         students: [Student]
         getStudents(stuid: String): Student
+
+        teachers: [Teacher]
     }
 
     type Mutation{
         AddStudent(stu: StudentInput): Student
         DeleteStudent(StudentID: String): String
+
+        AddTeacher(tch: TeacherInput): Teacher
     }
 
 `;

@@ -6,9 +6,20 @@ import {
     useRouteMatch,
 } from "react-router-dom";
 
+// Apollo Client For Query Students Record
+import { useQuery } from '@apollo/client';
+import { useMutation } from '@apollo/client';
+import { GetTeachers } from '../../queries/teacherquery';
 
 function TeacherRow() {
+
     let { url } = useRouteMatch();
+    let { loading, error, data } = useQuery(GetTeachers);
+
+    if (loading) return <p>Loading...</p>;
+    if (error) return <p>Error :(</p>;
+    let teacherRecords = data.teachers;
+
     return (
         <div>
             <Container>
@@ -23,70 +34,28 @@ function TeacherRow() {
                                 <Col lg={3} md={1} sm={1} xs={1}><p>CNIC</p></Col>
                                 <Col lg={3} md={1} sm={1} xs={1}><p>Action</p></Col>
                             </Row>
-                            <Row className="STDR">
-                                <Col lg={1} md={1} sm={1} xs={1}><p>#1029</p></Col>
-                                <Col lg={1} md={1} sm={1} xs={1}><p>Photo</p></Col>
-                                <Col lg={2} md={1} sm={1} xs={1}><p>Aslam Sarfraz</p></Col>
-                                <Col lg={1} md={1} sm={1} xs={1}><p>Male</p></Col>
-                                <Col lg={3} md={1} sm={1} xs={1}><p>35202-3596398-9</p></Col>
-                                <Col lg={3} md={1} sm={1} xs={1}>
-                                    <div className="ActionButton">
-                                        <Link to={`${url}/viewteacher`}>
-                                            <button>view</button>
-                                        </Link>
-                                        <button>update</button>
-                                        <button>delete</button>
-                                    </div>
-                                </Col>
-                            </Row>
-                            <Row className="STDR">
-                                <Col lg={1} md={1} sm={1} xs={1}><p>#1029</p></Col>
-                                <Col lg={1} md={1} sm={1} xs={1}><p>Photo</p></Col>
-                                <Col lg={2} md={1} sm={1} xs={1}><p>Aslam Sarfraz</p></Col>
-                                <Col lg={1} md={1} sm={1} xs={1}><p>Male</p></Col>
-                                <Col lg={3} md={1} sm={1} xs={1}><p>35202-3596398-9</p></Col>
-                                <Col lg={3} md={1} sm={1} xs={1}>
-                                    <div className="ActionButton">
-                                        <Link to={`${url}/viewteacher`}>
-                                            <button>view</button>
-                                        </Link>
-                                        <button>update</button>
-                                        <button>delete</button>
-                                    </div>
-                                </Col>
-                            </Row>
-                            <Row className="STDR">
-                                <Col lg={1} md={1} sm={1} xs={1}><p>#1029</p></Col>
-                                <Col lg={1} md={1} sm={1} xs={1}><p>Photo</p></Col>
-                                <Col lg={2} md={1} sm={1} xs={1}><p>Aslam Sarfraz</p></Col>
-                                <Col lg={1} md={1} sm={1} xs={1}><p>Male</p></Col>
-                                <Col lg={3} md={1} sm={1} xs={1}><p>35202-3596398-9</p></Col>
-                                <Col lg={3} md={1} sm={1} xs={1}>
-                                    <div className="ActionButton">
-                                        <Link to={`${url}/viewteacher`}>
-                                            <button>view</button>
-                                        </Link>
-                                        <button>update</button>
-                                        <button>delete</button>
-                                    </div>
-                                </Col>
-                            </Row>
-                            <Row className="STDR">
-                                <Col lg={1} md={1} sm={1} xs={1}><p>#1029</p></Col>
-                                <Col lg={1} md={1} sm={1} xs={1}><p>Photo</p></Col>
-                                <Col lg={2} md={1} sm={1} xs={1}><p>Aslam Sarfraz</p></Col>
-                                <Col lg={1} md={1} sm={1} xs={1}><p>Male</p></Col>
-                                <Col lg={3} md={1} sm={1} xs={1}><p>35202-3596398-9</p></Col>
-                                <Col lg={3} md={1} sm={1} xs={1}>
-                                    <div className="ActionButton">
-                                        <Link to={`${url}/viewteacher`}>
-                                            <button>view</button>
-                                        </Link>
-                                        <button>update</button>
-                                        <button>delete</button>
-                                    </div>
-                                </Col>
-                            </Row>
+                            {
+                                teacherRecords.map((a) => {
+                                    return (
+                                        <Row className="STDR">
+                                            <Col lg={1} md={1} sm={1} xs={1}><p>{a.teacherID}</p></Col>
+                                            <Col lg={1} md={1} sm={1} xs={1}><p>Photo</p></Col>
+                                            <Col lg={2} md={1} sm={1} xs={1}><p>{`${a.firstName} ${a.lastName}`}</p></Col>
+                                            <Col lg={1} md={1} sm={1} xs={1}><p>{a.gender}</p></Col>
+                                            <Col lg={3} md={1} sm={1} xs={1}><p>{a.CNIC}</p></Col>
+                                            <Col lg={3} md={1} sm={1} xs={1}>
+                                                <div className="ActionButton">
+                                                    <Link to={`${url}/viewteacher`}>
+                                                        <button>view</button>
+                                                    </Link>
+                                                    <button>update</button>
+                                                    <button>delete</button>
+                                                </div>
+                                            </Col>
+                                        </Row>
+                                    )
+                                })
+                            }
                         </div>
                     </Col>
                 </Row>
