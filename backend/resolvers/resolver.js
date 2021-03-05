@@ -84,6 +84,12 @@ const resolvers = {
                 else{console.log(r)}
             });
             return teacherRecord
+        },
+        deleteTeacher: (_,{tchid})=>{
+            TeacherModel.findByIdAndDelete(tchid,(e,r)=>{
+                if(e){return 'Record Deletion Failed !'}
+                else{return 'Record Deleted !'}
+            })
         }
     }
 };

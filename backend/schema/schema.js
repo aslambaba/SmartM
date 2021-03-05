@@ -99,6 +99,7 @@ const typeDefs = gql`
         DeleteStudent(StudentID: String): String
 
         AddTeacher(tch: TeacherInput): Teacher
+        deleteTeacher(tchid: String): String
     }
 
 `;

@@ -34,3 +34,10 @@ export const AddNewTeacher = gql`
     }
 
 `;
+
+
+export const DeleteTeacherRecord = gql`
+    mutation($teacherid: String){
+        deleteTeacher(tchid: $teacherid)
+    }
+`;

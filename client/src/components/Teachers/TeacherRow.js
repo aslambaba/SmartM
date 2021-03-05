@@ -10,16 +10,30 @@ import {
 import { useQuery } from '@apollo/client';
 import { useMutation } from '@apollo/client';
 import { GetTeachers } from '../../queries/teacherquery';
+import { DeleteTeacherRecord } from '../../mutations/teachermutation';
 
 function TeacherRow() {
 
+    
+
     let { url } = useRouteMatch();
     let { loading, error, data } = useQuery(GetTeachers);
+    const [DeleteTeacher] = useMutation(DeleteTeacherRecord);
 
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error :(</p>;
     let teacherRecords = data.teachers;
-
+    
+    function DeleteTCHRecord(id){
+        DeleteTeacher(
+            {
+                variables: {
+                    teacherid: id
+                },
+                refetchQueries: [{query: GetTeachers}]
+            }
+        );
+    }
     return (
         <div>
             <Container>
@@ -49,7 +63,7 @@ function TeacherRow() {
                                                         <button>view</button>
                                                     </Link>
                                                     <button>update</button>
-                                                    <button>delete</button>
+                                                    <button onClick={()=>{DeleteTCHRecord(a._id)}}>delete</button>
                                                 </div>
                                             </Col>
                                         </Row>
