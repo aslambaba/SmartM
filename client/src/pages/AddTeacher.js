@@ -46,17 +46,20 @@ function AddStudent() {
                 }
             }
         );
-        firstNameInput = '';
-        lastNameInput = '';
-        genderInput = '';
-        fatherNameInput = '';
-        CNICInput = '';
-        DOBInput = '';
-        teacherIDInput = '';
-        religionInput = '';
-        emailInput = '';
-        phoneNumberInput = '';
-        addressInput = '';
+        firstNameInput.current.value = '';
+        lastNameInput.current.value = '';
+        genderInput.current.value = '';
+        fatherNameInput.current.value = '';
+        CNICInput.current.value = '';
+        DOBInput.current.value = '';
+        teacherIDInput.current.value = '';
+        religionInput.current.value = '';
+        emailInput.current.value = '';
+        phoneNumberInput.current.value = '';
+        addressInput.current.value = '';
+        if (savetype == 'Save') {
+            window.location.replace("/teachers");
+        }
     }
     return (
         <div>
