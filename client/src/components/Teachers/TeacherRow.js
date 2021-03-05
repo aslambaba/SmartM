@@ -45,7 +45,7 @@ function TeacherRow() {
                                             <Col lg={3} md={1} sm={1} xs={1}><p>{a.email}</p></Col>
                                             <Col lg={3} md={1} sm={1} xs={1}>
                                                 <div className="ActionButton">
-                                                    <Link to={`${url}/viewteacher`}>
+                                                    <Link to={`${url}/viewteacher/${a._id}`}>
                                                         <button>view</button>
                                                     </Link>
                                                     <button>update</button>

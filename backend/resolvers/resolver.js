@@ -15,6 +15,11 @@ const resolvers = {
         teachers: ()=>{
             const teachers = TeacherModel.find();
             return teachers
+        },
+
+        getTeacher: (_,{tchid})=>{
+            const teacher = TeacherModel.findById(tchid);
+            return teacher
         }
     },
     Mutation: {

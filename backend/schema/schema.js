@@ -91,6 +91,7 @@ const typeDefs = gql`
         getStudents(stuid: String): Student
 
         teachers: [Teacher]
+        getTeacher(tchid: String): Teacher
     }
 
     type Mutation{

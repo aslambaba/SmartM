@@ -45,8 +45,8 @@ function App() {
 
 
           <Route exact path='/teachers' component={TeacherMain}></Route>
-          <Route exact path='/teachers/addteacher' component={AddTeacher}></Route>
-          <Route exact path='/teachers/viewteacher' component={ViewTeacher}></Route>
+          <Route path='/teachers/addteacher' component={AddTeacher}></Route>
+          <Route path='/teachers/viewteacher/:teacherId' component={ViewTeacher}></Route>
 
           <Route exact path='/classes' component={Classes}></Route>
           <Route exact path='/classes/:classNo' component={SingleClass}></Route>

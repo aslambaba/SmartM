@@ -12,3 +12,21 @@ query{
     }
 }
 `;
+
+export const getTeacher = gql`
+query getsingleTeacher($teacherId: String!){
+    getTeacher(tchid: $teacherId){
+        firstName,
+        lastName,
+        gender,
+        fatherName,
+        CNIC,
+        DOB,
+        teacherID,
+        religion,
+        email,
+        phoneNumber,
+        address,
+    }
+}
+`;
