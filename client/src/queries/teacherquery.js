@@ -8,7 +8,7 @@ query{
         firstName
         lastName
         gender
-        CNIC
+        email
     }
 }
 `;

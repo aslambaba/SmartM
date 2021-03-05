@@ -31,7 +31,7 @@ function TeacherRow() {
                                 <Col lg={1} md={1} sm={1} xs={1}><p>Photo</p></Col>
                                 <Col lg={2} md={1} sm={1} xs={1}><p>Name</p></Col>
                                 <Col lg={1} md={1} sm={1} xs={1}><p>Gender</p></Col>
-                                <Col lg={3} md={1} sm={1} xs={1}><p>CNIC</p></Col>
+                                <Col lg={3} md={1} sm={1} xs={1}><p>Email</p></Col>
                                 <Col lg={3} md={1} sm={1} xs={1}><p>Action</p></Col>
                             </Row>
                             {
@@ -42,7 +42,7 @@ function TeacherRow() {
                                             <Col lg={1} md={1} sm={1} xs={1}><p>Photo</p></Col>
                                             <Col lg={2} md={1} sm={1} xs={1}><p>{`${a.firstName} ${a.lastName}`}</p></Col>
                                             <Col lg={1} md={1} sm={1} xs={1}><p>{a.gender}</p></Col>
-                                            <Col lg={3} md={1} sm={1} xs={1}><p>{a.CNIC}</p></Col>
+                                            <Col lg={3} md={1} sm={1} xs={1}><p>{a.email}</p></Col>
                                             <Col lg={3} md={1} sm={1} xs={1}>
                                                 <div className="ActionButton">
                                                     <Link to={`${url}/viewteacher`}>
