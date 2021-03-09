@@ -1,6 +1,11 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+const Qualifications = {
+    degreeName: String,
+    instituteName: String,
+    completedYear: String,
+}
 
 const TeacherSchema = new Schema({
     firstName: String,
@@ -14,6 +19,7 @@ const TeacherSchema = new Schema({
     email: String,
     phoneNumber: String,
     address: String,
+    qualifications: [Qualifications],
 });
 
 const teachermodel = mongoose.model("teacherrecord", TeacherSchema);

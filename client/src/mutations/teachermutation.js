@@ -15,6 +15,7 @@ export const AddNewTeacher = gql`
         $email: String!,
         $phoneNumber: String!,
         $address: String!,
+        $qualificationsInput: [QualificationInput]
     ){
         AddTeacher(tch: {
         firstName: $firstName,
@@ -28,6 +29,7 @@ export const AddNewTeacher = gql`
         email: $email,
         phoneNumber: $phoneNumber,
         address: $address,
+        qualifications: $qualificationsInput
         }){
             firstName
         }

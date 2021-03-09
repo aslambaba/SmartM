@@ -79,6 +79,7 @@ const resolvers = {
                 email: tch.email,
                 phoneNumber: tch.phoneNumber,
                 address: tch.address,
+                qualifications: tch.qualifications,
             });
             teacherRecord.save().then((e,r)=>{
                 if(e){console.log(e)}

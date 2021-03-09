@@ -66,6 +66,12 @@ const typeDefs = gql`
         previousInstitute: [PVInput]
     }
 
+    input QualificationInput{
+        degreeName: String
+        instituteName: String
+        completedYear: String
+    }
+
     type Teacher {
         _id: String
         firstName: String
@@ -93,6 +99,7 @@ const typeDefs = gql`
         email: String
         phoneNumber: String
         address: String
+        qualifications: [QualificationInput]
     }
 
     type Query {

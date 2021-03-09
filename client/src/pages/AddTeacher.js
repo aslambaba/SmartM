@@ -11,8 +11,10 @@ import { useMutation } from '@apollo/client';
 import { AddNewTeacher } from '../mutations/teachermutation';
 
 function AddStudent() {
-    const [savetype, setSavetype] = useState('')
 
+    const [savetype, setSavetype] = useState('')
+    const [qualificationInfo, SetqualificationInfo] = useState([{}]);
+    console.log(qualificationInfo)
     let [AddStudent] = useMutation(AddNewTeacher);
 
     let firstNameInput = useRef();
@@ -43,6 +45,7 @@ function AddStudent() {
                     email: emailInput.current.value,
                     phoneNumber: phoneNumberInput.current.value,
                     address: addressInput.current.value,
+                    qualificationsInput: qualificationInfo,
                 }
             }
         );
@@ -58,7 +61,7 @@ function AddStudent() {
         phoneNumberInput.current.value = '';
         addressInput.current.value = '';
         if (savetype == 'Save') {
-            window.location.replace("/teachers");
+            window.location.replace("/students");
         }
     }
     return (
@@ -97,7 +100,7 @@ function AddStudent() {
                         </div>
                         <div className="QualificationInformation">
                             <h3>Qualifications</h3>
-                            <AddQualificationField />
+                            <AddQualificationField sqi={SetqualificationInfo}/>
                         </div>
                         <div className="WorkInformation">
                             <h3>Previous Work Experinces</h3>
