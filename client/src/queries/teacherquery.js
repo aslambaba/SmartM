@@ -27,6 +27,11 @@ query getsingleTeacher($teacherId: String!){
         email,
         phoneNumber,
         address,
+        qualifications{
+            degreeName
+            instituteName
+            completedYear
+        }
     }
 }
 `;

@@ -18,7 +18,8 @@ function ViewStudent() {
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error :(</p>;
     let singleTeacher = data.getTeacher;
-
+    console.log(singleTeacher);
+    const tchQualification = singleTeacher.qualifications;
     return (
         <div>
             <MainMenu />
@@ -126,10 +127,30 @@ function ViewStudent() {
                 </Row>
                 <Row>
                     <Col lg={12} md={12} sm={12} xs={12}>
-                        <h2>Qualifucations</h2>
+                        <h2>Qualifications</h2>
                         <div className='previousSchoolsSec'>
-                            <h3>Allient School Bahawalpur</h3>
-                            <h3>Superior College Bahawalpur</h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Degree Name</th>
+                                        <th>Institute Name</th>
+                                        <th>Compelete Year</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {
+                                        Object.keys(tchQualification).map((tq)=>{
+                                            return(
+                                                <tr>
+                                                    <td>{tchQualification[tq].degreeName}</td>
+                                                    <td>{tchQualification[tq].instituteName}</td>
+                                                    <td>{tchQualification[tq].completedYear}</td>
+                                                </tr>
+                                            )
+                                        })
+                                    }
+                                </tbody>
+                            </table>
                         </div>
                     </Col>
                     <Col lg={12} md={12} sm={12} xs={12}>
