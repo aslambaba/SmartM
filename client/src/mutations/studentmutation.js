@@ -1,7 +1,12 @@
 import { gql } from '@apollo/client';
 
 // Mutation to Add new Student Record in Database
+
+const Pv = {
+  previousInstitute: String,
+}
 export const AddNewStudent = gql`
+
   mutation AddStudent(
     $firstName: String!,
     $lastName: String!,
@@ -27,6 +32,7 @@ export const AddNewStudent = gql`
     $nationality: String!,
     $presentAddress: String!,
     $parmanentAddress: String!,
+    $previousInstitute: [PV],
     ){
         AddStudent(stu: {
         firstName: $firstName,
@@ -53,6 +59,7 @@ export const AddNewStudent = gql`
         nationality: $nationality,
         presentAddress: $presentAddress,
         parmanentAddress: $parmanentAddress,
+        previousInstitute: $previousInstitute
         }) 
         {
       firstName

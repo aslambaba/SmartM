@@ -49,6 +49,7 @@ const resolvers = {
                 nationality: stu.nationality,
                 presentAddress: stu.presentAddress,
                 parmanentAddress: stu.parmanentAddress,
+                previousInstitute: stu.previousInstitute
             });
             student.save().then((e,r)=>{
                 if(e){console.log(e)}

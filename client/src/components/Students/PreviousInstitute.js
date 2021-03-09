@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Row, Col } from 'react-bootstrap';
 import './style/inputfieldsstyle.css';
 
-function App() {
-    const [inputList, setInputList] = useState([{ PreviousInstitute: ""}]);
+function App(props) {
+    const [inputList, setInputList] = useState([{ previousInstitute: ""}]);
 
     // handle input change
     const handleInputChange = (e, index) => {
@@ -11,6 +11,8 @@ function App() {
         const list = [...inputList];
         list[index][name] = value;
         setInputList(list);
+        console.log(inputList);
+        props.spv(list);
     };
 
     // handle click event of the Remove button
@@ -22,7 +24,7 @@ function App() {
 
     // handle click event of the Add button
     const handleAddClick = () => {
-        setInputList([...inputList, {PreviousInstitute: ""}]);
+        setInputList([...inputList, {previousInstitute: ""}]);
     };
 
     return (
@@ -33,9 +35,9 @@ function App() {
                         <Row>
                             <Col lg={12} md={12} sm={12} xs={12}>
                                 <input
-                                    name="PreviousInstitute"
+                                    name="previousInstitute"
                                     placeholder="Previous Institute"
-                                    value={x.DegreeName}
+                                    value={x.PreviousInstitute}
                                     onChange={e => handleInputChange(e, i)}
                                 />
                             </Col>

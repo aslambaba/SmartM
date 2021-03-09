@@ -2,6 +2,10 @@ const { gql } = require('apollo-server');
 
 const typeDefs = gql`
 
+    input PV{
+        previousInstitute: String
+    }
+
     type Student {
         _id: String
         firstName: String
@@ -55,6 +59,7 @@ const typeDefs = gql`
         nationality: String
         presentAddress: String
         parmanentAddress: String
+        previousInstitute: [PV]
     }
 
     type Teacher {

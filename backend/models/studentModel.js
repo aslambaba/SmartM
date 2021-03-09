@@ -1,6 +1,9 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+const pv = {
+    previousInstitute: String
+}
 
 const StudentSchema = new Schema({
     firstName: String,
@@ -27,6 +30,7 @@ const StudentSchema = new Schema({
     nationality: String,
     presentAddress: String,
     parmanentAddress: String,
+    previousInstitute: [pv]
 });
 
 const studentmodel = mongoose.model("studentsrecord",StudentSchema);

@@ -12,6 +12,7 @@ import { useMutation } from '@apollo/client';
 import { AddNewStudent } from '../mutations/studentmutation';
 
 function AddStudent() {
+    const [prevInst, setPrevInst] = useState([{}]); 
     const [savetype, setSavetype] = useState('')
     const [AddNewSTD] = useMutation(AddNewStudent);
 
@@ -71,6 +72,7 @@ function AddStudent() {
                     nationality: nationalityInput.current.value,
                     presentAddress: pressentaddressInput.current.value,
                     parmanentAddress: parmanentaddressInput.current.value,
+                    previousInstitute: prevInst,
                 }
             }
         );
@@ -158,7 +160,7 @@ function AddStudent() {
                                     <option>Evening</option>
                                 </select></Col>
                             </Row>
-                            <PreviousInstitute />
+                            <PreviousInstitute spv={setPrevInst}/>
                         </div>
                         <div className="FamilyInformation">
                             <h3>Parents Information</h3>
