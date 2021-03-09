@@ -19,6 +19,7 @@ function ViewStudent() {
     if (error) return <p>Error :(</p>;
     console.log(data);
     let stu = data.getStudents;
+    let stuPrev = stu.previousInstitute;
     return (
 
         <div>
@@ -213,8 +214,13 @@ function ViewStudent() {
                     <Col lg={12} md={12} sm={12} xs={12}>
                         <h2>Previous Schools</h2>
                         <div className='previousSchoolsSec'>
-                            <h3>Allient School Bahawalpur</h3>
-                            <h3>Superior College Bahawalpur</h3>
+                            {
+                                Object.keys(stuPrev).map((st)=>{
+                                    return(
+                                        <h3>{stuPrev[st].previousInstitute}</h3>
+                                    )
+                                })
+                            }
                         </div>
                     </Col>
                     <Col lg={12} md={12} sm={12} xs={12}>

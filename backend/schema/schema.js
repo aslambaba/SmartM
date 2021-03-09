@@ -2,7 +2,10 @@ const { gql } = require('apollo-server');
 
 const typeDefs = gql`
 
-    input PV{
+    type PV{
+        previousInstitute: String
+    }
+    input PVInput{
         previousInstitute: String
     }
 
@@ -32,6 +35,7 @@ const typeDefs = gql`
         nationality: String
         presentAddress: String
         parmanentAddress: String
+        previousInstitute: [PV]
     }
   
     input StudentInput{
@@ -59,7 +63,7 @@ const typeDefs = gql`
         nationality: String
         presentAddress: String
         parmanentAddress: String
-        previousInstitute: [PV]
+        previousInstitute: [PVInput]
     }
 
     type Teacher {

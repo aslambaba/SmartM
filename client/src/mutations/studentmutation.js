@@ -32,7 +32,7 @@ export const AddNewStudent = gql`
     $nationality: String!,
     $presentAddress: String!,
     $parmanentAddress: String!,
-    $previousInstitute: [PV],
+    $previousInstitute: [PVInput],
     ){
         AddStudent(stu: {
         firstName: $firstName,

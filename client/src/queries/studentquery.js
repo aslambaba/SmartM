@@ -46,6 +46,9 @@ export const getsingleStudent = gql`
         nationality
         presentAddress
         parmanentAddress
+        previousInstitute{
+            previousInstitute
+        }
     }
   }
 
