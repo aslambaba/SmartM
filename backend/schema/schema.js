@@ -99,6 +99,7 @@ const typeDefs = gql`
         phoneNumber: String
         address: String
         qualifications: [Qualification]
+        workExperince: [WorkEx]
     }
 
     input TeacherInput {

@@ -32,6 +32,9 @@ query getsingleTeacher($teacherId: String!){
             instituteName
             completedYear
         }
+        workExperince{
+            workExperince
+        }
     }
 }
 `;

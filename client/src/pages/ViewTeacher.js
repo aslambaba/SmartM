@@ -20,6 +20,7 @@ function ViewStudent() {
     let singleTeacher = data.getTeacher;
     console.log(singleTeacher);
     const tchQualification = singleTeacher.qualifications;
+    const tchWorkExperince = singleTeacher.workExperince;
     return (
         <div>
             <MainMenu />
@@ -156,8 +157,13 @@ function ViewStudent() {
                     <Col lg={12} md={12} sm={12} xs={12}>
                         <h2>Previous Experince</h2>
                         <div className='addressSec'>
-                            <h3>Present Address: Lahore Gulburg Pahse II</h3>
-                            <h3>Permanent Address: Karachi Shahdra Pahse II</h3>
+                            {
+                                Object.keys(tchWorkExperince).map((tw)=>{
+                                    return(
+                                        <h3>{tchWorkExperince[tw].workExperince}</h3>
+                                    )
+                                })
+                            }
                         </div>
                     </Col>
                 </Row>
