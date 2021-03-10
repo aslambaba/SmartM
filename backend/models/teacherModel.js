@@ -6,7 +6,9 @@ const Qualifications = {
     instituteName: String,
     completedYear: String,
 }
-
+const WorkEx = {
+    workExperince: String,
+}
 const TeacherSchema = new Schema({
     firstName: String,
     lastName: String,
@@ -20,6 +22,7 @@ const TeacherSchema = new Schema({
     phoneNumber: String,
     address: String,
     qualifications: [Qualifications],
+    workExperince: [WorkEx],
 });
 
 const teachermodel = mongoose.model("teacherrecord", TeacherSchema);

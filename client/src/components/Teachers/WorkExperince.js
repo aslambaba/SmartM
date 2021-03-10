@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Row, Col } from 'react-bootstrap';
 import './style/inputfieldsstyle.css';
 
-function App() {
-    const [inputList, setInputList] = useState([{ WorkExperince: ""}]);
+function App(props) {
+    const [inputList, setInputList] = useState([{ workExperince: ""}]);
 
     // handle input change
     const handleInputChange = (e, index) => {
@@ -11,6 +11,7 @@ function App() {
         const list = [...inputList];
         list[index][name] = value;
         setInputList(list);
+        props.swe(list);
     };
 
     // handle click event of the Remove button
@@ -22,7 +23,7 @@ function App() {
 
     // handle click event of the Add button
     const handleAddClick = () => {
-        setInputList([...inputList, {WorkExperince: ""}]);
+        setInputList([...inputList, {workExperince: ""}]);
     };
 
     return (
@@ -33,7 +34,7 @@ function App() {
                         <Row>
                             <Col lg={12} md={12} sm={12} xs={12}>
                                 <input
-                                    name="Work Experince"
+                                    name="workExperince"
                                     placeholder="Work Experince"
                                     value={x.DegreeName}
                                     onChange={e => handleInputChange(e, i)}

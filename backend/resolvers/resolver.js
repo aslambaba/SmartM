@@ -80,6 +80,7 @@ const resolvers = {
                 phoneNumber: tch.phoneNumber,
                 address: tch.address,
                 qualifications: tch.qualifications,
+                workExperince: tch.workExperince
             });
             teacherRecord.save().then((e,r)=>{
                 if(e){console.log(e)}

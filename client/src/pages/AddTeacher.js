@@ -14,7 +14,11 @@ function AddStudent() {
 
     const [savetype, setSavetype] = useState('')
     const [qualificationInfo, SetqualificationInfo] = useState([{}]);
-    console.log(qualificationInfo)
+    const [workEx, SetWorkEx] = useState([{}]);
+
+    console.log(qualificationInfo);
+    console.log(workEx);
+
     let [AddStudent] = useMutation(AddNewTeacher);
 
     let firstNameInput = useRef();
@@ -46,6 +50,7 @@ function AddStudent() {
                     phoneNumber: phoneNumberInput.current.value,
                     address: addressInput.current.value,
                     qualificationsInput: qualificationInfo,
+                    WorkExperinceInput: workEx,
                 }
             }
         );
@@ -104,7 +109,7 @@ function AddStudent() {
                         </div>
                         <div className="WorkInformation">
                             <h3>Previous Work Experinces</h3>
-                            <WorkExperince />
+                            <WorkExperince swe={SetWorkEx} />
                         </div>
                         <div class="SaveBTN">
                             <button>Cancel</button>

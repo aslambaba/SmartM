@@ -77,6 +77,14 @@ const typeDefs = gql`
         completedYear: String
     }
 
+    type WorkEx{
+        workExperince: String
+    }
+
+    input WorkExInput{
+        workExperince: String
+    }
+
     type Teacher {
         _id: String
         firstName: String
@@ -106,6 +114,7 @@ const typeDefs = gql`
         phoneNumber: String
         address: String
         qualifications: [QualificationInput]
+        workExperince: [WorkExInput]
     }
 
     type Query {
