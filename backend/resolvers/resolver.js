@@ -1,5 +1,6 @@
 const StudentModel = require('../models/studentModel');
 const TeacherModel = require('../models/teacherModel');
+const ClassModel = require('../models/classsesModel');
 
 const resolvers = {
     Query: {
@@ -93,6 +94,14 @@ const resolvers = {
                 if(e){return 'Record Deletion Failed !'}
                 else{return 'Record Deleted !'}
             })
+        },
+
+        AddClass: (_,{cla})=>{
+            const newClass = new ClassModel({
+                className: cla.className,
+            });
+            newClass.save();
+            return 'Class Added Succesfully'
         }
     }
 };

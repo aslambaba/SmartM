@@ -118,12 +118,23 @@ const typeDefs = gql`
         workExperince: [WorkExInput]
     }
 
+    type Class {
+        className: String
+        sections: [String]
+    }
+    input ClassInput {
+        className: String
+        sections: [String]
+    }
+
     type Query {
         students: [Student]
         getStudents(stuid: String): Student
 
         teachers: [Teacher]
         getTeacher(tchid: String): Teacher
+
+        classes: [Class]
     }
 
     type Mutation{
@@ -132,6 +143,8 @@ const typeDefs = gql`
 
         AddTeacher(tch: TeacherInput): Teacher
         deleteTeacher(tchid: String): String
+    
+        AddClass(cla: ClassInput): String
     }
 
 `;
