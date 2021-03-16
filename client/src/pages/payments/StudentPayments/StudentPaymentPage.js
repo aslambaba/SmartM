@@ -1,5 +1,6 @@
 import React from 'react';
 import MainMenu from '../../../components/MainMenu';
+import PaymentProfile from '../../../components/Payments/PaymentProfile';
 import './style/studentpaymentpage.css';
 import { Row, Col } from 'react-bootstrap';
 
@@ -10,7 +11,11 @@ function StudentPaymentPage() {
             <MainMenu />
             <div className='SDP_MainSection'>
                 <h3>Student Dues</h3>
+                <PaymentProfile />
                 <div className='DuesSec'>
+                    <div className='ActionBTN'>
+                        <button>Edit</button>
+                    </div>
                     <h4>2021</h4>
                     <Row>
                         <Col lg={1}>
@@ -173,6 +178,10 @@ function StudentPaymentPage() {
                             <div className='MonthIcon'>Dec</div>
                         </Col>
                     </Row>
+                    <div className='ActionBTN2'>
+                        <button>Cancle</button>
+                        <button>Save</button>
+                    </div>
                 </div>
             </div>
         </div>

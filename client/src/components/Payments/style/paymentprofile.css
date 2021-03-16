@@ -1,0 +1,16 @@
+.ProfileBody{
+    margin: 20px 10px;
+    background-color: yellow;
+    padding: 10px 20px;
+    border-radius: 6px;
+}
+.ProfileBody img{
+    height: 50px;
+}
+.ProfileBody button{
+    background-color: transparent;
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 10px 15px;
+    border: 1px solid gray;
+}
