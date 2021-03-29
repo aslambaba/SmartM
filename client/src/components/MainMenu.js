@@ -94,12 +94,6 @@ function MainMenu() {
                         </Link>
                     </li>
                     <li>
-                        <Link className="Linkk" to={`/attendence`}>
-                            <SupervisedUserCircleIcon />
-                            <p style={hiddenStyle}>Attendence</p>
-                        </Link>
-                    </li>
-                    <li>
                         <Link className="Linkk" to={`/payments`}>
                             <PaymentIcon />
                             <p style={hiddenStyle}>Payments</p>
