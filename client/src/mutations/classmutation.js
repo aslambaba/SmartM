@@ -9,3 +9,15 @@ export const AddClass = gql`
         })    
     }
 `;
+
+export const AddSec = gql`
+    mutation AddSection(
+        $classNameInput: String!
+        $sectionNameInput: String!
+    ){
+        AddSection(sec: {
+            className: $classNameInput
+            sections: $sectionNameInput
+        })
+    }
+`;

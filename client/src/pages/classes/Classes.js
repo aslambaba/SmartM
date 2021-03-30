@@ -11,8 +11,16 @@ import {
     useRouteMatch
 } from "react-router-dom";
 
+import { useQuery } from '@apollo/client';
+import { GetClasses } from '../../queries/classquery';
+
 function Classes() {
     let { url } = useRouteMatch();
+
+    let { loading, error, data } = useQuery(GetClasses);
+    if (loading) return <p>Loading...</p>;
+    if (error) return <p>Error :(</p>;
+    let classes = data.getClasses;
     let classData = '1';
     return (
         <div>
@@ -25,11 +33,17 @@ function Classes() {
                     </Col>
                 </Row>
                 <Row>
-                    <Col lg={4} md={4} sm={6} xs={6}>
-                        <Link to={`${url}/${classData}`}>
-                            <ClassComponent name={classData}/>
-                        </Link>
-                    </Col>
+                    {
+                        Object.keys(classes).map((a) => {
+                            return (
+                                <Col lg={4} md={4} sm={6} xs={6}>
+                                    <Link to={`${url}/${classes[a].className}`}>
+                                        <ClassComponent name={classes[a].className}/>
+                                    </Link>
+                                </Col>
+                            )
+                        })
+                    }
                 </Row>
             </div>
         </div>

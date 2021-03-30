@@ -119,12 +119,13 @@ const typeDefs = gql`
     }
 
     type Class {
+        _id: String
         className: String
         sections: [String]
     }
     input ClassInput {
         className: String
-        sections: [String]
+        sections: String
     }
 
     type Query {
@@ -134,7 +135,8 @@ const typeDefs = gql`
         teachers: [Teacher]
         getTeacher(tchid: String): Teacher
 
-        classes: [Class]
+        getClasses: [Class]
+        getSection(classN: String): [String]
     }
 
     type Mutation{
@@ -145,6 +147,7 @@ const typeDefs = gql`
         deleteTeacher(tchid: String): String
     
         AddClass(cla: ClassInput): String
+        AddSection(sec: ClassInput): String
     }
 
 `;

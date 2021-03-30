@@ -1,11 +1,9 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const section = [String];
-
 const ClassSchema = new Schema({
     className: String,
-    sections: [section],
+    sections: [String],
 });
 
 const classmodel = mongoose.model("classes",ClassSchema);

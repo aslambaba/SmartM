@@ -21,7 +21,19 @@ const resolvers = {
         getTeacher: (_,{tchid})=>{
             const teacher = TeacherModel.findById(tchid);
             return teacher
+        },
+
+        getClasses: ()=>{
+            const classes = ClassModel.find();
+            return classes
+        },
+        
+        getSection: async (_,{classN})=>{
+            const result = await ClassModel.find({className: classN}).exec();
+            const section = await result[0].sections;
+            return section;
         }
+
     },
     Mutation: {
         AddStudent: (_, { stu }) => {
@@ -102,6 +114,13 @@ const resolvers = {
             });
             newClass.save();
             return 'Class Added Succesfully'
+        },
+        AddSection: (_,{sec})=>{
+            ClassModel.findOneAndUpdate(
+                {className: sec.className},
+                { $push: { "sections": sec.sections} },
+            ).exec();
+            return "Update Successfully"
         }
     }
 };
