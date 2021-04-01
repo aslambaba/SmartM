@@ -8,28 +8,28 @@ const resolvers = {
             const data = StudentModel.find();
             return data
         },
-        getStudents: (_,{stuid})=>{
+        getStudents: (_, { stuid }) => {
             const getstudentdata = StudentModel.findById(stuid);
             return getstudentdata;
         },
 
-        teachers: ()=>{
+        teachers: () => {
             const teachers = TeacherModel.find();
             return teachers
         },
 
-        getTeacher: (_,{tchid})=>{
+        getTeacher: (_, { tchid }) => {
             const teacher = TeacherModel.findById(tchid);
             return teacher
         },
 
-        getClasses: ()=>{
+        getClasses: () => {
             const classes = ClassModel.find();
             return classes
         },
-        
-        getSection: async (_,{classN})=>{
-            const result = await ClassModel.find({className: classN}).exec();
+
+        getSection: async (_, { classN }) => {
+            const result = await ClassModel.find({ className: classN }).exec();
             const section = await result[0].sections;
             return section;
         }
@@ -57,29 +57,28 @@ const resolvers = {
                 fatherOccupation: stu.fatherOccupation,
                 motherOccupation: stu.motherOccupation,
                 fatherCNIC: stu.fatherCNIC,
-                motherCNIC: stu.MotherCNIC,
+                motherCNIC: stu.motherCNIC,
                 phoneNumber: stu.phoneNumber,
                 nationality: stu.nationality,
                 presentAddress: stu.presentAddress,
                 parmanentAddress: stu.parmanentAddress,
                 previousInstitute: stu.previousInstitute
             });
-            student.save().then((e,r)=>{
-                if(e){console.log(e)}
-                else{console.log(r)}
+            student.save().then((e, r) => {
+                if (e) { console.log(e) }
+                else { console.log(r) }
             });
             return student
         },
-        DeleteStudent: (_,{StudentID})=>{
+        DeleteStudent: (_, { StudentID }) => {
             console.log(StudentID)
-            StudentModel.findOneAndDelete({_id: StudentID},(e,r)=>{
-                if(e){return 'Record Deletion Failed !'}
-                else{return 'Record Deleted !'}
+            StudentModel.findOneAndDelete({ _id: StudentID }, (e, r) => {
+                if (e) { return 'Record Deletion Failed !' }
+                else { return 'Record Deleted !' }
             })
         },
 
-
-        AddTeacher: (_,{tch})=>{
+        AddTeacher: (_, { tch }) => {
             const teacherRecord = new TeacherModel({
                 firstName: tch.firstName,
                 lastName: tch.lastName,
@@ -95,30 +94,30 @@ const resolvers = {
                 qualifications: tch.qualifications,
                 workExperince: tch.workExperince
             });
-            teacherRecord.save().then((e,r)=>{
-                if(e){console.log(e)}
-                else{console.log(r)}
+            teacherRecord.save().then((e, r) => {
+                if (e) { console.log(e) }
+                else { console.log(r) }
             });
             return teacherRecord
         },
-        deleteTeacher: (_,{tchid})=>{
-            TeacherModel.findByIdAndDelete(tchid,(e,r)=>{
-                if(e){return 'Record Deletion Failed !'}
-                else{return 'Record Deleted !'}
+        deleteTeacher: (_, { tchid }) => {
+            TeacherModel.findByIdAndDelete(tchid, (e, r) => {
+                if (e) { return 'Record Deletion Failed !' }
+                else { return 'Record Deleted !' }
             })
         },
 
-        AddClass: (_,{cla})=>{
+        AddClass: (_, { cla }) => {
             const newClass = new ClassModel({
                 className: cla.className,
             });
             newClass.save();
             return 'Class Added Succesfully'
         },
-        AddSection: (_,{sec})=>{
+        AddSection: (_, { sec }) => {
             ClassModel.findOneAndUpdate(
-                {className: sec.className},
-                { $push: { "sections": sec.sections} },
+                { className: sec.className },
+                { $push: { "sections": sec.sections } },
             ).exec();
             return "Update Successfully"
         }
