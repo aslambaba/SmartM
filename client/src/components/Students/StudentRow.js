@@ -64,7 +64,9 @@ function StudentRow() {
                                                     <Link to={`${url}/viewstudent/${a._id}`}>
                                                         <button>view</button>
                                                     </Link>
-                                                    <button>update</button>
+                                                    <Link to={`${url}/updatestudent/${a._id}`}>
+                                                        <button>Update</button>
+                                                    </Link>
                                                     <button onClick={()=>{DeleteStuRecord(a._id)}}>delete</button>
                                                 </div>
                                             </Col>

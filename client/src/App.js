@@ -6,6 +6,7 @@ import Login from './pages/login/Login';
 import Dashboard from './pages/Dashboard'
 import StudentMain from './pages/StudentMain'
 import AddStudent from './pages/AddStudent';
+import UpdateStudent from './pages/UpdateStudent';
 import ViewStudent from './pages/ViewStudent';
 import TeacherMain from './pages/TeacherMain';
 import AddTeacher from './pages/AddTeacher';
@@ -40,6 +41,7 @@ function App() {
           <Route exact path='/students' component={StudentMain}></Route>
           <Route path='/students/addstudent' component={AddStudent}></Route>
           <Route path='/students/viewstudent/:id' component={ViewStudent}></Route>
+          <Route path='/students/updatestudent/:id' component={UpdateStudent}></Route>
 
 
           <Route exact path='/teachers' component={TeacherMain}></Route>

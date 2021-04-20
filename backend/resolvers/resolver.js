@@ -70,6 +70,38 @@ const resolvers = {
             });
             return student
         },
+        UpdateStudent: (_, { stu })=> {
+            console.log(stu.StuID);
+            console.log(stu.firstName);
+            console.log(stu.phoneNumber);
+            StudentModel.findOneAndUpdate({_id:stu.StuID},{
+                firstName: stu.firstName,
+                lastName: stu.lastName,
+                gender: stu.gender,
+                guardianName: stu.guardianName,
+                CNIC: stu.CNIC,
+                DOB: stu.DOB,
+                rollNumber: stu.rollNumber,
+                admissonNumber: stu.admissonNumber,
+                admissonDate: stu.admissonDate,
+                religion: stu.religion,
+                cast: stu.cast,
+                class: stu.class,
+                section: stu.section,
+                classShift: stu.classShift,
+                fatherName: stu.fatherName,
+                motherName: stu.motherName,
+                fatherOccupation: stu.fatherOccupation,
+                motherOccupation: stu.motherOccupation,
+                fatherCNIC: stu.fatherCNIC,
+                motherCNIC: stu.motherCNIC,
+                phoneNumber: stu.phoneNumber,
+                nationality: stu.nationality,
+                presentAddress: stu.presentAddress,
+                parmanentAddress: stu.parmanentAddress,
+            }).exec();
+            return 'Data Updated Sccuessfully'
+        },
         DeleteStudent: (_, { StudentID }) => {
             console.log(StudentID)
             StudentModel.findOneAndDelete({ _id: StudentID }, (e, r) => {

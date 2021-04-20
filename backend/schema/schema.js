@@ -65,6 +65,33 @@ const typeDefs = gql`
         parmanentAddress: String
         previousInstitute: [PVInput]
     }
+    input StudentUpdateInput{
+        StuID: String
+        firstName: String
+        lastName: String
+        gender: String
+        guardianName: String
+        CNIC: String
+        DOB: Int
+        rollNumber: Int
+        admissonNumber: Int
+        admissonDate: Int
+        religion: String
+        cast: String
+        class: String
+        section: String
+        classShift: String
+        fatherName: String
+        motherName: String
+        fatherOccupation: String
+        motherOccupation: String
+        fatherCNIC: String
+        motherCNIC: String
+        phoneNumber: String
+        nationality: String
+        presentAddress: String
+        parmanentAddress: String
+    }
 
     type Qualification{
         degreeName: String
@@ -141,6 +168,7 @@ const typeDefs = gql`
 
     type Mutation{
         AddStudent(stu: StudentInput): Student
+        UpdateStudent(stu: StudentUpdateInput): String
         DeleteStudent(StudentID: String): String
 
         AddTeacher(tch: TeacherInput): Teacher

@@ -3,8 +3,10 @@ import { Row, Col } from 'react-bootstrap';
 import './style/inputfieldsstyle.css';
 
 function App(props) {
-    const [inputList, setInputList] = useState([{ previousInstitute: ""}]);
-
+    const [inputList, setInputList] = useState([{ previousInstitute: "" }]);
+    if (props.dspv) {
+        console.log(props.dspv);
+    }
     // handle input change
     const handleInputChange = (e, index) => {
         const { name, value } = e.target;
@@ -24,7 +26,7 @@ function App(props) {
 
     // handle click event of the Add button
     const handleAddClick = () => {
-        setInputList([...inputList, {previousInstitute: ""}]);
+        setInputList([...inputList, { previousInstitute: "" }]);
     };
 
     return (
@@ -46,7 +48,7 @@ function App(props) {
                                     {inputList.length !== 1 && <button
                                         className="mr10 REMBtn"
                                         onClick={() => handleRemoveClick(i)}>Remove</button>}
-                                    {inputList.length - 1 === i && <button className='ADDBtn'onClick={handleAddClick}>ADD</button>}
+                                    {inputList.length - 1 === i && <button className='ADDBtn' onClick={handleAddClick}>ADD</button>}
                                 </div>
                             </Col>
                         </Row>
