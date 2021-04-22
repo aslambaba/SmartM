@@ -132,6 +132,29 @@ const resolvers = {
             });
             return teacherRecord
         },
+        UpdateTeacher: (_,{tch})=>{
+
+            TeacherModel.findOneAndUpdate(
+                {_id: tch.tchID},
+                {
+                    firstName: tch.firstName,
+                    lastName: tch.lastName,
+                    gender: tch.gender,
+                    fatherName: tch.fatherName,
+                    CNIC: tch.CNIC,
+                    DOB: tch.DOB,
+                    teacherID: tch.teacherID,
+                    religion: tch.religion,
+                    email: tch.email,
+                    phoneNumber: tch.phoneNumber,
+                    address: tch.address,
+                }
+                
+            ).exec();
+
+            return 'Teacher Data Updated !!'
+
+        },
         deleteTeacher: (_, { tchid }) => {
             TeacherModel.findByIdAndDelete(tchid, (e, r) => {
                 if (e) { return 'Record Deletion Failed !' }

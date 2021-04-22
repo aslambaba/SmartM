@@ -62,7 +62,9 @@ function TeacherRow() {
                                                     <Link to={`${url}/viewteacher/${a._id}`}>
                                                         <button>view</button>
                                                     </Link>
-                                                    <button>update</button>
+                                                    <Link to={`${url}/updateteacher/${a._id}`}>
+                                                        <button>Update</button>
+                                                    </Link>
                                                     <button onClick={()=>{DeleteTCHRecord(a._id)}}>delete</button>
                                                 </div>
                                             </Col>

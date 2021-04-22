@@ -145,6 +145,21 @@ const typeDefs = gql`
         workExperince: [WorkExInput]
     }
 
+    input TeacherUpdateInput {
+        tchID: String
+        firstName: String
+        lastName: String
+        gender: String
+        fatherName: String
+        CNIC: String
+        DOB: Int
+        teacherID: Int
+        religion: String
+        email: String
+        phoneNumber: String
+        address: String
+    }
+
     type Class {
         _id: String
         className: String
@@ -172,6 +187,7 @@ const typeDefs = gql`
         DeleteStudent(StudentID: String): String
 
         AddTeacher(tch: TeacherInput): Teacher
+        UpdateTeacher(tch: TeacherUpdateInput): String
         deleteTeacher(tchid: String): String
     
         AddClass(cla: ClassInput): String

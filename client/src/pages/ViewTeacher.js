@@ -55,12 +55,6 @@ function ViewStudent() {
                                     <p>{singleTeacher.CNIC}</p>
                                 </Col>
                                 <Col lg={6} md={6} sm={12} xs={12}>
-                                    <h5>Age</h5>
-                                </Col>
-                                <Col lg={6} md={6} sm={12} xs={12}>
-                                    <p>18</p>
-                                </Col>
-                                <Col lg={6} md={6} sm={12} xs={12}>
                                     <h5>Date of Birth</h5>
                                 </Col>
                                 <Col lg={6} md={6} sm={12} xs={12}>

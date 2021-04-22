@@ -10,7 +10,7 @@ import { useRef, useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { AddNewTeacher } from '../mutations/teachermutation';
 
-function AddStudent() {
+function AddTeacher() {
 
     const [savetype, setSavetype] = useState('')
     const [qualificationInfo, SetqualificationInfo] = useState([{}]);
@@ -123,4 +123,4 @@ function AddStudent() {
     )
 }
 
-export default AddStudent;
+export default AddTeacher;

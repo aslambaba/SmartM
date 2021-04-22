@@ -4,13 +4,17 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 import Login from './pages/login/Login';
 import Dashboard from './pages/Dashboard'
+
 import StudentMain from './pages/StudentMain'
 import AddStudent from './pages/AddStudent';
 import UpdateStudent from './pages/UpdateStudent';
 import ViewStudent from './pages/ViewStudent';
+
 import TeacherMain from './pages/TeacherMain';
 import AddTeacher from './pages/AddTeacher';
+import UpdateTeacher from './pages/UpdateTeacher';
 import ViewTeacher from './pages/ViewTeacher';
+
 import FeesChallans from './pages/Payments';
 import StudentFees from './components/Payments/StudentFees';
 import TeacherSalary from './components/Payments/TeachersSalary';
@@ -47,6 +51,7 @@ function App() {
           <Route exact path='/teachers' component={TeacherMain}></Route>
           <Route path='/teachers/addteacher' component={AddTeacher}></Route>
           <Route path='/teachers/viewteacher/:teacherId' component={ViewTeacher}></Route>
+          <Route path='/teachers/updateteacher/:teacherId' component={UpdateTeacher}></Route>
 
           <Route exact path='/classes' component={Classes}></Route>
           <Route exact path='/classes/:classNo' component={SingleClass}></Route>
