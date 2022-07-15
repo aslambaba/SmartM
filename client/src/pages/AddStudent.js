@@ -103,9 +103,9 @@ function AddStudent() {
         parmanentaddressInput.current.value = '';
 
         alert("Student Added Successfully");
-        if (savetype == 'Save') {
-            window.location.replace("/students");
-        }
+        // if (savetype == 'Save') {
+        //     window.location.replace("/students");
+        // }
 
     }
     return (

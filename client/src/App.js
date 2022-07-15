@@ -15,6 +15,8 @@ import AddTeacher from './pages/AddTeacher';
 import UpdateTeacher from './pages/UpdateTeacher';
 import ViewTeacher from './pages/ViewTeacher';
 
+import TimeTableMain from './pages/TimeTableMain';
+
 import FeesChallans from './pages/Payments';
 import StudentFees from './components/Payments/StudentFees';
 import TeacherSalary from './components/Payments/TeachersSalary';
@@ -60,6 +62,7 @@ function App() {
           <Route path='/settings/general' component={GeneralSetting}></Route>
           <Route path='/settings/users' component={UsersSettings}></Route>
 
+          <Route exact path='/timetable' component={TimeTableMain}></Route>
 
           <Route exact path='/payments' component={FeesChallans}></Route>
           <Route exact path='/payments/students' component={StudentFees}></Route>
